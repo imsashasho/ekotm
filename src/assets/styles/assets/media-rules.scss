@@ -1,0 +1,34 @@
+$xs: 576px;
+$sm: 767px;
+$md: 992px;
+$lg: 1440px;
+
+@mixin media($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include media($xs) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include media($sm) {
+    @content;
+  }
+}
+
+@mixin tabletLarge {
+  @include media($md) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include media($lg) {
+    @content;
+  }
+}

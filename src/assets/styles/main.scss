@@ -1,4 +1,5 @@
 @import './assets/vars';  // переменные
+@import './assets/media-rules';
 @import './assets/smart-grid';  // mixins smartgrid.js
 // libraries
 @import './libs';
@@ -11,6 +12,7 @@
 @import './assets/class'; // main style
 @import './assets/interface'; // main style
 @import './assets/breadcrubs'; // main style
+@import './assets/main-styles';// container style
 
 
 // sass dima
