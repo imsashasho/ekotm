@@ -3,14 +3,12 @@ sans-serif;
 $default-font2: "montser",
 sans-serif;
 
-$mc2: #FF554C;
-$mc3: #E5DF06;
-$mc4: #4F90B6;
-$gray:rgb(135, 135, 151);
-$text: #22223E;
+$mc1: #283013;
+$mc2: #8CB90C;
+$textGrey: #676863;
+$textLight: #9A9F8C;
 $wc: #fff;
 $bc: #000;
-$bc2: #000;
 
 $mc: #1A2941;
 $bg: #FAFAFA;
@@ -27,7 +25,7 @@ $gold: #CFA46E;
 
 @media screen and (max-width: 1440px){
   :root {
-    --header-h: 90px;
+    --header-h: 80px;
     --logo-w: 120px;
     --sliceFigure-big: 362px;
   }

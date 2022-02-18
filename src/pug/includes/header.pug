@@ -1,23 +1,21 @@
 header.header
     .header-inner.container
         .header__left
-            a(href='logo').logo.header__link
-                +svg('logo').logo__svg
-            .burger
-                a(href="burger").burger.menu__link 
+            a(href='logo').header__link
+                +svg('logo').header-logo__svg
+            .header-burger__group
+                a(href="burger").burger.header-burger__link 
                     +svg('burger').burger__svg
-                p.burger-descr Меню
+                p.burger__descr Меню
             
-            .header__line
         .header__right
-            a(href='apartment').apartment.apartment__link Обрати квартиру
+            a(href='apartment').header-apartment__link Обрати квартиру
             .call
                 .call__num
-                    a(href='tel:0442992203').call__phone + 38 (095) показать
-                    a(href='tel:0442992203').call__phone-hidden + 38 (095) 555 55 55
+                    a(href='tel:0442992203').call__phone.active +38(095)показать
+                    a(href='tel:0442992203').call__phone-hidden.show + 38 (095) 555 55 55
                 .request
                     a(href='#').request__link.js-form-open Замовити дзвінок   
-            .header__line
             a(href='camera').cam.header__cam
                 +svg('cam').cam__svg
             
