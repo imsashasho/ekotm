@@ -46,9 +46,6 @@ const glob = require("glob")
 const merge = require('merge-stream');
 const path = require('path');
 
-
-
-
 const paths = {
     root: './dist',
     templateStyles: {
@@ -103,29 +100,33 @@ const paths = {
 // слежка
 function watch() {
     gulp.watch(paths.templateStyles.main, watchScssTemplates);
-		gulp.watch(paths.styles.src, styles);
+	gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
+	
     if (webPackSetting) {
-      gulp.watch(paths.scripts.src, scripts); //for webpack
+		gulp.watch(paths.scripts.src, scripts); //for webpack
     }
-    gulp.watch(paths.gulpModules.src, gulpModules);
+	
+	gulp.watch(paths.gulpModules.src, gulpModules);
+	
     if (typeScriptSetting) {
       gulp.watch(paths.ts.src, typeScript);
     }
 
-		gulp.watch(paths.ts.src, testJsLint);
-		gulp.watch(paths.images.src, images);
-		gulp.watch(paths.fonts.src, fonts);
-		gulp.watch(paths.libs.src, libs);
-		gulp.watch(paths.static.src, static);
-		gulp.watch('./src/pug/**/*.html', templates);
-		gulp.watch('./src/assets/svg-sprite/*.*', svgSprite);
+	gulp.watch(paths.ts.src, testJsLint);
+	gulp.watch(paths.images.src, images);
+	gulp.watch(paths.fonts.src, fonts);
+	gulp.watch(paths.libs.src, libs);
+	gulp.watch(paths.static.src, static);
+	gulp.watch('./src/pug/**/*.html', templates);
+	gulp.watch('./src/assets/svg-sprite/*.*', svgSprite);
 }
 
 // creater templates scss
 
 function watchScssTemplates() {
     scssTemplateCreater();
+
     return gulp.src(paths.templates.pages);
         // .pipe(gulp.dest(paths.root));
 }
@@ -156,27 +157,27 @@ function server() {
 
 // очистка
 function clean() {
-		return del(paths.root);
+	return del(paths.root);
 }
 
 // pug
 function templates() {
 	return gulp.src(paths.templates.pages)
-	.pipe(pug({ pretty: true }))
-	.pipe(gulp.dest(paths.root));
+		.pipe(pug({ pretty: true }))
+		.pipe(gulp.dest(paths.root));
 }
 
 // eslint
 function testJsLint() {
 	return gulp.src(paths.ts.src).
-	pipe(eslint()).
-	pipe(eslint.format())
-	// .pipe(eslint.failAfterError());
+		pipe(eslint()).
+		pipe(eslint.format())
+		// .pipe(eslint.failAfterError());
 }
 
 // scss
 function styles() {
-		return gulp.src(paths.styles.main)
+	return gulp.src(paths.styles.main)
 		.pipe(sourcemaps.init()) // инциализация sourcemap'ов
 		.pipe(sass({
 				outputStyle: 'expanded' // компиляции в CSS с отступами
@@ -192,11 +193,11 @@ function styles() {
 
 // fonts
 function fonts() {
-		return gulp.src(paths.fonts.src)
-				.pipe(gulp.dest(paths.fonts.dest))
+	return gulp.src(paths.fonts.src)
+		.pipe(gulp.dest(paths.fonts.dest))
 }
 
-// php
+// phpHUA
 function static() {
 		return gulp.src(paths.static.src)
 				.pipe(gulp.dest(paths.static.dest))
@@ -327,12 +328,12 @@ exports.watchScssTemplates = watchScssTemplates;
 
 gulp.task('default', gulp.series(
     watchScssTemplates,
-		svgSprite,
-		clean,
+	svgSprite,
+	clean,
     libs,
     ...additionalTask,
-		gulp.parallel(styles, templates, fonts, gulpModules, testJsLint, images, static),
-		gulp.parallel(watch, server)
+	gulp.parallel(styles, templates, fonts, gulpModules, testJsLint, images, static),
+	gulp.parallel(watch, server)
 ));
 
 
