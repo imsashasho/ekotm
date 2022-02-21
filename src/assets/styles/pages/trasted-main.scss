@@ -1,0 +1,116 @@
+.trusted-main {
+    background-image: url(/src/assets/images/black-and-white-lg-bg.png);
+    background-size: cover;
+    background-position: center;
+
+    &__inner {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left {    
+        max-width: 50%;
+        display: flex;
+        padding-top: 132px;
+        padding-right: 171px;
+        padding-bottom: 163px;
+    }
+
+    &__left-header {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 110%;
+        color: $wc;
+        padding-right: 60px;
+        border-right: 1px solid $wc;
+    }
+
+    &__left-descr {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 140%;
+        color: $wc;
+        padding-left: 60px;
+
+    }
+
+    &__right {
+        max-width: 50%;
+        display: flex;
+        justify-content: flex-startgit ;
+        padding-left: 180px;
+    }
+
+    &__right-count {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 80px;
+    }
+
+    &__right-count-t {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 100px;
+        line-height: 80%;
+        text-align: center;
+        color: $bc;
+        margin-bottom: 15px;
+    }
+
+    &__right-count-c {
+        border-bottom: 1px solid #000;
+        width: 30px;
+        height: 0;
+        margin-bottom: 10px;
+    }
+
+    &__right-count-b {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    &__right-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__right-price-t {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 100px;
+        line-height: 80%;
+        text-align: center;
+        color: $bc;
+        margin-bottom: 15px;
+    }
+
+    &__right-price-c {
+        border-bottom: 1px solid #000;
+        width: 30px;
+        height: 0;
+        margin-bottom: 10px;
+    }
+
+    &__right-price-b {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+
+}
