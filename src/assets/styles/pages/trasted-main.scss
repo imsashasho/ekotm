@@ -11,10 +11,9 @@
     }
 
     &__left {    
-        max-width: 50%;
+        max-width: 40%;
         display: flex;
         padding-top: 132px;
-        padding-right: 171px;
         padding-bottom: 163px;
     }
 
@@ -41,10 +40,9 @@
     }
 
     &__right {
-        max-width: 50%;
+        width: 40%;
         display: flex;
-        justify-content: flex-startgit ;
-        padding-left: 180px;
+        justify-content: space-around;
     }
 
     &__right-count {
