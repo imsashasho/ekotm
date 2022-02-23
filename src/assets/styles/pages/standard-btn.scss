@@ -1,0 +1,39 @@
+.standard-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.standard-btn:hover .btn-arrow{
+    transform: translateX(0);
+
+}
+
+.btn-link {
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #0E0E0E;
+    margin-right: 40px;
+}
+
+.btn-svg {
+    position: relative;
+}
+
+.btn-arrow {
+    position: absolute;
+    top: 30%;
+    transform: translateX(-50%);
+    transition: ease-in-out 0.7s;
+}
+
+.btn-arrow svg{
+    max-width: 50px;
+    height: 9px;
+}
+
+.btn-circle svg {
+    max-width: 50px;
+    height: 60px;
+}
