@@ -1,0 +1,212 @@
+.sale-main {
+    display: flex;
+    margin: 0 auto;
+
+    &__list {
+        display: flex;
+        height: 100%;
+        margin: 0 auto;
+    }
+}
+
+.sale-card {
+    
+/*top card is a card with a heading text aligned at the top*/
+    &__top {
+        position: relative;
+        max-width: 33.33333%;
+    }
+
+
+    &__top-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__top-img::after {
+        content: "";
+        background: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+
+    &__top-header {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 120%;
+        color: $wc;
+        padding-left: 40px;
+        padding-top: 20px;
+        padding-right: 143px;
+    }
+
+    &__top-figures{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+
+    }
+
+    &__top-logo {
+        line-height: 0;
+    }
+
+    &__top-logo svg{
+        margin-right: 32px;
+        margin-bottom: 32px;
+        width: 94px;
+        height: 35px;
+    }
+
+    &__center {
+        position: relative;
+        max-width: 33.33333%;
+    }
+
+    &__center-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__center-img::after {
+        content: "";
+        background: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__center-logo {
+        line-height: 0;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    &__center-logo svg {
+        width: 94px;
+        height: 35px;
+    }
+
+    &__center-header {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 110%;
+        text-align: center;
+        color: $wc;
+        margin-right: 62px;
+        margin-left: 62px;
+    }
+
+    &__center-contacts {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 30px;
+        margin-bottom: 31px;
+
+    }
+
+    &__center-contacts span{
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        color: $wc;
+
+    }
+
+
+    &__left {
+        position: relative;
+        max-width: 33.33333%;
+    }
+
+    &__left-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__left-img::after {
+        content: "";
+        background: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__left-logo {
+        line-height: 0;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+
+    &__left-logo svg {
+        width: 94px;
+        max-height: 35px;
+    }
+
+    &__left-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__left-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 50%;
+        padding-left: 45px;
+    }
+
+    &__left-header {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 120%;
+        color: $wc;
+        margin-bottom: 15px;
+    }
+
+    &__left-descr {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: $wc;
+    }
+
+
+}
