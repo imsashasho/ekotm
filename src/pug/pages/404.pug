@@ -1,5 +1,4 @@
-extends ../layout/main
-	
+extends ../layout/main	
 block meta
 	title= '404'
 	meta(name='description', content='')
@@ -19,12 +18,9 @@ block content
 					span.button-fill__text Назад
 				a(class="button-fill" href="/")
 					span.button-fill__text На главную
+block header	
+	include ../includes/header.pug
 
 block footer
 	footer.footer
 		include ../includes/footer.pug
-
-block header
-	header.header
-		include ../includes/header.pug
-

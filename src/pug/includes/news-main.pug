@@ -1,0 +1,46 @@
+section.news-main 
+  .news-main__inner.container 
+    .news-top 
+      h3.news-top-title Новини
+      .standard-btn.news-btn
+          a(href="news.html").btn-link.news-link більше новин
+          .btn-svg
+            .btn-arrow
+              +svg('arrow-white')
+            .btn-circle
+              +svg('circle-white')
+    .news-slider
+      .news-slider__wrp.swiper-wrapper 
+        .news-slider__item.swiper-slide 
+          a(href="#").news__item
+            .news__img 
+              img(src="assets/images/news1.png", alt="")
+              .news-text
+                h4.news__title Чорна п’ятниця! Реальні знижки до 60 000 грн 
+                span.news__date 10.01.2022
+        .news-slider__item.swiper-slide 
+          a(href="#").news__item
+            .news__img 
+              img(src="assets/images/news2.png", alt="")
+              .news-text
+                h4.news__title Здійснюйте бажання  
+                span.news__date 10.01.2022
+        .news-slider__item.swiper-slide 
+          a(href="#").news__item
+            .news__img 
+              img(src="assets/images/news3.png", alt="") 
+              .news-text
+                h4.news__title Чорна п’ятниця! Реальні знижки до 60 000 грн 
+                span.news__date 10.01.2022
+      .news-slider__ctr
+        .news-slider__pagination
+        .news-slider__arrows
+          button.news-slider__arrow.news-slider-prev
+            span.icon-font
+              +svg('slider-left-w').icon.icon-arrow-left
+          button.news-slider__arrow.news-slider-next
+            span.icon-font
+              +svg('slider-right-w').icon.icon-arrow-right
+        
+          
+        

@@ -1,0 +1,29 @@
+section.questions-main 
+  .questions-main__inner 
+    img(src="assets/images/tree-top.png", alt="").tree-top
+    img(src="assets/images/tree-bottom.png", alt="").tree-bottom
+    img(src="assets/images/croped-house.png", alt="").cropped-house
+    .questions-form-field 
+      h4.questions-form-title Виникли запитання? <br> Заповнюй поля нижче і ми передзвонимо у наближчий час
+      form(data-home-contact autocomplete="off").questions-form
+        .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(type='text' name="name" placeholder="Ім’я").form-field__input
+          .input-message(data-input-message) Ім’я:*
+        .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+          input(type='text' name="phone").form-field__input
+          .input-message(data-input-message) Телефон:*
+        label.checkbox.checkbox-circular
+          input(type="checkbox" name="checkbox-q" id="checkbox-q")
+          span.checkbox-icon 
+          span згода на обробку персональних даних      
+        button( type="submit" data-btn-submit).standard-btn.questions-btn
+          span(data-btn-submit-text).btn-link Надіслати
+          .btn-svg
+            .btn-arrow
+              +svg ('arrow')
+            .btn-circle
+              +svg ('circle')
+    .questions-bottom-mob 
+      img(src="assets/images/questions-bottom-mob.png", alt="")
+
+

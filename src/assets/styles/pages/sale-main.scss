@@ -1,212 +1,112 @@
 .sale-main {
-    display: flex;
-    margin: 0 auto;
+  display: flex;
 
-    &__list {
-        display: flex;
-        height: 100%;
-        margin: 0 auto;
+  &__list {
+    display: flex;
+    width: 100%;
+    @include mobile {
+      flex-direction: column;
     }
+  }
 }
 
 .sale-card {
+  width: 33.33333%;
+  height: 100%;
+  position: relative;
+  @include mobile {
+    width: 100%;
+  } 
+  & img {
+    object-fit: cover;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    margin: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    max-width: 100%;
+    transition: ease-in 0.3s;
+  }
+  &:hover .sale-card__bg {
+    opacity: 1;
+  }
+
+  &__text{
+    width: 70%;
+    height: 100%;
+    padding: 68px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(35px);
+    @include tabletLarge {
+      padding: 20px;      
+    }
+    @include tablet {
+      width: 100%;
+      padding: 10px;
+      
+    }
+    @include mobile {
+      width: 70%;  
+      padding: 20px; 
+    }
     
-/*top card is a card with a heading text aligned at the top*/
-    &__top {
-        position: relative;
-        max-width: 33.33333%;
+  } 
+  &__title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: $wc;
+    margin-bottom: 20px;
+    @include tabletLarge {
+      font-size: 18px;   
     }
-
-
-    &__top-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        width: 100%;
+    @include tablet {
+      font-size: 12px;
+      margin-bottom: 15px;     
     }
-
-    &__top-img::after {
-        content: "";
-        background: rgba(0, 0, 0, 0.2);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+    @include mobile {
+      font-size: 15px; 
+      margin-bottom: 30px;   
     }
-    
+  }
 
-    &__top-header {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 120%;
-        color: $wc;
-        padding-left: 40px;
-        padding-top: 20px;
-        padding-right: 143px;
+  &__descr {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #E0E0E0;
+    @include tabletLarge {
+      font-size: 15px;   
     }
-
-    &__top-figures{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: flex-end;
-
+    @include tablet {
+      font-size: 10px;
+      
     }
-
-    &__top-logo {
-        line-height: 0;
+    @include mobile {
+      font-size: 12px;
     }
+  }
 
-    &__top-logo svg{
-        margin-right: 32px;
-        margin-bottom: 32px;
-        width: 94px;
-        height: 35px;
+  &__btn {
+    margin-top: 50px;
+    @include tabletLarge {
+      margin-top: 30px;
     }
-
-    &__center {
-        position: relative;
-        max-width: 33.33333%;
+    @include tablet {
+      margin-top: 15px;
+      
     }
-
-    &__center-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    @include mobile {
+      margin-top: 30px;
+      
     }
-
-    &__center-img::after {
-        content: "";
-        background: rgba(0, 0, 0, 0.2);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
-    &__center-logo {
-        line-height: 0;
-        margin-left: 30px;
-        margin-top: 20px;
-    }
-
-    &__center-logo svg {
-        width: 94px;
-        height: 35px;
-    }
-
-    &__center-header {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 40px;
-        line-height: 110%;
-        text-align: center;
-        color: $wc;
-        margin-right: 62px;
-        margin-left: 62px;
-    }
-
-    &__center-contacts {
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 30px;
-        margin-bottom: 31px;
-
-    }
-
-    &__center-contacts span{
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 120%;
-        color: $wc;
-
-    }
-
-
-    &__left {
-        position: relative;
-        max-width: 33.33333%;
-    }
-
-    &__left-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &__left-img::after {
-        content: "";
-        background: rgba(0, 0, 0, 0.2);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
-    &__left-logo {
-        line-height: 0;
-        margin-left: 50px;
-        margin-top: 20px;
-    }
-
-    &__left-logo svg {
-        width: 94px;
-        max-height: 35px;
-    }
-
-    &__left-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__left-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 50%;
-        padding-left: 45px;
-    }
-
-    &__left-header {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 120%;
-        color: $wc;
-        margin-bottom: 15px;
-    }
-
-    &__left-descr {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 140%;
-        color: $wc;
-    }
-
-
+  }
 }

@@ -1,114 +1,223 @@
 .trusted-main {
-    background-image: url(/src/assets/images/black-and-white-lg-bg.png);
-    background-size: cover;
-    background-position: center;
+  background-image: url(../images/black-and-white-lg-bg.png);
+  background-size: cover;
+  background-position: center;
+  @include tablet {
+    background-image: none;
+    & .container {
+      padding: 0;
+    }
+  }
 
-    &__inner {
-        max-width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  
+
+  &__inner {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      flex-direction: column;
+    }
+  
+  }
+
+  &__left {
+    width: 40%;
+    display: flex;
+    padding-top: 132px;
+    padding-bottom: 163px;
+    align-items: center;
+    @include tabletLarge {
+      padding-top: 98px;
+      padding-bottom: 98px;
     }
 
-    &__left {    
-        max-width: 40%;
-        display: flex;
-        padding-top: 132px;
-        padding-bottom: 163px;
+    @include tablet {
+      background-image: url(../images/trusted-bg-bc-tablet.png);
+      width: 100%;
+      padding: 98px 50px;
     }
 
-    &__left-header {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 110%;
-        color: $wc;
-        padding-right: 60px;
-        border-right: 1px solid $wc;
+    @include mobile {
+      background-image: url(../images/trusted-bg-bl-mob.png);    
+      padding: 60px 20px 52px 20px;
+      flex-direction: column;
+    }
+  
+  }
+
+  &__left-header {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 110%;
+    color: $wc;
+    padding-right: 60px;
+    border-right: 1px solid $wc;
+    @include tabletLarge {
+      font-size: 36px;
+    }
+    @include tablet {
+      padding-right: 41px;
+    }
+    @include mobile {
+      font-size: 24px;
+      padding-right: 0;
+      border-right: none;
+      align-self: flex-start;
+    }
+  }
+
+  &__left-descr {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    color: $lightGrey;
+    padding-left: 60px;
+    @include tabletLarge {
+      font-size: 15px;
+    }
+    @include tablet {
+      padding-left: 41px;
+    }
+    @include mobile {
+      padding-left: 0;
+      margin-top: 10px;
+    }
+  }
+
+  &__right {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    @include tablet {
+      background-image: url(../images/trusted-bg-wc-tablet.png);
+      padding: 97px 146px;
+      width: 100%;
+    }
+  
+    @include mobile {
+      background-image: url(../images/trusted-bg-wc-mob.png);
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__right-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 80px;
+
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+
+  &__right-count-t {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 80%;
+    text-align: center;
+    color: $bc;
+    margin-bottom: 15px;
+
+    @include tabletLarge {
+      font-size: 80px;
     }
 
-    &__left-descr {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 140%;
-        color: $wc;
-        padding-left: 60px;
+    @include mobile {
+      font-size: 60px;
+    }
+  }
 
+  &__right-count-c {
+    border-bottom: 1px solid #000;
+    width: 30px;
+    height: 0;
+    margin-bottom: 10px;
+
+    @include tablet {
+      width: 15px;
+    }
+  }
+
+  &__right-count-b {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 100%;
+
+    @include tabletLarge {
+      font-size: 16px;
     }
 
-    &__right {
-        width: 40%;
-        display: flex;
-        justify-content: space-around;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__right-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+
+  &__right-price-t {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 80%;
+    text-align: center;
+    color: $bc;
+    margin-bottom: 15px;
+
+    @include tabletLarge {
+      font-size: 80px;
     }
 
-    &__right-count {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 80px;
+    @include mobile {
+      font-size: 60px;
+    }
+  }
+
+  &__right-price-c {
+    border-bottom: 1px solid #000;
+    width: 30px;
+    height: 0;
+    margin-bottom: 10px;
+    @include tablet {
+      width: 15px;
+    }
+  }
+
+  &__right-price-b {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 100%;
+
+    @include tabletLarge {
+      font-size: 16px;
     }
 
-    &__right-count-t {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 100px;
-        line-height: 80%;
-        text-align: center;
-        color: $bc;
-        margin-bottom: 15px;
+    @include mobile {
+      font-size: 12px;
     }
-
-    &__right-count-c {
-        border-bottom: 1px solid #000;
-        width: 30px;
-        height: 0;
-        margin-bottom: 10px;
-    }
-
-    &__right-count-b {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 100%;
-    }
-
-    &__right-price {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__right-price-t {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 100px;
-        line-height: 80%;
-        text-align: center;
-        color: $bc;
-        margin-bottom: 15px;
-    }
-
-    &__right-price-c {
-        border-bottom: 1px solid #000;
-        width: 30px;
-        height: 0;
-        margin-bottom: 10px;
-    }
-
-    &__right-price-b {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 100%;
-    }
-
-
+  }
 }

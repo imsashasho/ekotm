@@ -1,158 +1,322 @@
 .location-main {
-    background-image: url(/src/assets/images/location-bg.png);
+  background-image: url(../images/location-bg.png);
+  background-size: cover;
+  height: 100vh;
+
+  &__inner {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+.location-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+    @include tablet {
+      flex-direction: column-reverse;
+    }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 110px 144px 110px 110px;
+    background-image: url(../images/black-leaf-bg.png);
     background-size: cover;
-    height: 100vh;
-  
-    &__inner {
-      position: relative;
-      max-width: 100%;
-      height: 100%;
+    width: 35%;
+      @include tabletLarge {
+        width: 28%;
+        padding: 71px 110px 71px 54px;
+      }
+      @include tablet {
+        width: 100%;
+        padding: 71px 50px;
+      }
+      @include mobile {
+        padding: 60px 20px;
+      }
+  }
+
+  &__left-header {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 110%;
+    color: $wc;
+    @include tabletLarge {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    @include tablet {
+      width: 50%;      
+    }  
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 10px;
+      width: 50%;
     }
   }
-.location-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+
+  &__left-descr {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    color: $lightGrey;
+    @include tabletLarge {
+      font-size: 15px;
+    }
+    @include tablet {
+      width: 50%;
+      font-size: 15px;
+    }
+    @include mobile {
+      width: 90%;
+    }
+  }
+
+  &__right {
+    width: 60%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-
-    &__left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 110px 144px 110px 110px;
-        background-image: url(/src/assets/images/black-leaf-bg.png);
-        background-size: cover;
-        max-width: 35%;
+    padding-right: 110px;
+    position: relative;
+    @include tabletLarge {
+      width: 67%;
+      padding-right: 50px;
     }
-
-    &__left-header {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 110%;
-        color: $wc;
+    @include tablet {
+      width: 100%;
+      padding-right: 0; 
     }
-
-    &__left-descr {
-        font-family: Gilroy;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 140%;
-        color: $lightGrey;
-    }
-
-    &__right {
-        width: 60%;
-        display: flex;
-        justify-content: space-between;
-        padding-right: 110px;
-    }
+  }
 }
 
 .progress-line {
-    
+  &__container {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    @include tablet {
+      padding: 40px 50px;
+    }
+    @include mobile {
+      padding: 20px;
+    }
+      &::before {
+        position: absolute;
+        content: '';
+        z-index: 0;
+        top: 55%;
+        left: 25px;
+        right: 100px;
+        height: 1px;
+        border-bottom: 2px dashed $wc;
+        @include tablet {
+          top: 53%;
+          left: 65px;
+          right: 130px;
+        }
+        @include mobile {
+          top: 59%;
+          left: 32px;
+          width: 80%;
+        }
+      }
+  }
 
-    &__container {
-        display: flex;
-        align-items: end;
-        width: 100%;
-        justify-content: space-between;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inner svg {
+    width: 33px;
+    height: 41px;
+    margin-bottom: 46px;
+    margin-left: 8px;
+    @include tabletLarge {
+      width: 25px;
+      height: 31px;
+      margin-left: 0;
+      margin-bottom: 35px;
+    }
+    @include mobile {
+      width: 15px;
+      height: 18px;
+      margin-bottom: 19px;
+     }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    @include tablet {
+      margin-bottom: 30px;
+      margin-left: 0;
+    }
+    @include mobile {
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: 0px;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__time-digit {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 110%;
+    color: $wc;
+    margin-right: 14px;
+    @include tabletLarge {
+      font-size: 36px;
+    }
+    @include mobile {
+     font-size: 24px;
+    }
+  }
+
+  &__time-minutes {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 120%;
+    color: $wc;
+    @include tabletLarge {
+      font-size: 12px;
+    }
+    @include mobile {
+      font-size: 8px;
+    }
+  }
+
+  &__circles-wrap {
+    position: relative;
+    margin-bottom: 40px;
+    @include tabletLarge {
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__circle1 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    @include tabletLarge {
+      width: 40px;
+      height: 40px;
+    }
+    @include mobile {
+      width: 25px;
+      height: 25px;
     }
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
+      &::before {
+        position: absolute;
+        content: '';
+        background-image: url(../images/vertical-line.svg);
+        z-index: 0;
+        height: 134px;
+        width: 2px;
+        left: 50%;
+        top: 0;
+        transform: translateY(-50px);
+        @include mobile {
+          display: none;
+         }
+      }
+  }
+
+  &__circle--empty {
+    &::before {
+     display: none;
     }
 
-    &__inner svg {
-        width: 33px;
-        height: 41px;
-        margin-bottom: 46px;
-        margin-left: 8px;
+  }
+
+  &__circle2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    @include tabletLarge {
+      width: 28px;
+      height: 28px;
     }
-
-    &__time {
-        display: flex;
-        align-items: center;
-        margin-bottom: 40px;
-        margin-left: 10px;
+    @include mobile {
+      width: 17.5px;
+      height: 17.5px;
     }
+  }
 
-    &__time-digit {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 110%;
-        color: $wc;
-        margin-right: 14px;
+  &__circle3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    @include tabletLarge {
+      width: 12px;
+      height: 12px;
     }
-
-    &__time-minutes {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 120%;
-        color: $wc;
-
+    @include mobile {
+      width: 8.5px;
+      height: 8.5px;
     }
-    
+  }
 
-    &__circles-wrap {
-        position: relative;
-        margin-bottom: 40px;
+  &__destination {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: $wc;
+    @include tabletLarge {
+      font-size: 18px;
     }
-
-    &__circle1 {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        background-image:
-            linear-gradient( rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
-            linear-gradient(black, black);
-        border-radius: 50%;
+    @include mobile {
+      font-size: 10px;
     }
+  }
+}
 
-    &__circle2 {
-        transform: translate(25%, 25%);
-        width: 35px;
-        height: 35px;
-        background-image:
-            linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-            linear-gradient(black, black);
-        border-radius: 50%;
-    }
-
-    &__circle3 {
-        transform: translate(48%, 46%);
-        width: 17px;
-        height: 17px;
-        background-image:
-            linear-gradient( rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
-            linear-gradient(black, black);
-        border-radius: 50%;
-    }
-
-    &__destination {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
-        color: $wc;
-
-
-    }
-
-
-
+.animated-car {
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  z-index: 5;
+  @include mobile {
+    width: 30%;
+  }
 
 }

@@ -5,12 +5,27 @@ section.location-main
         h3.location-bottom__left-header Розташування комплексу
         p.location-bottom__left-descr У шаленому і швидкому ритмі сучасного міського життя  ми майже не маємо вільного часу
       .location-bottom__right
-        .animated-car 
+        //- svg(width="711" height="1" viewBox="0 0 711 1" fill="none" xmlns="http://www.w3.org/2000/svg")
+        //-   path(x1="711" y1="0.5" y2="0.5" stroke="white" stroke-opacity="0.2" stroke-dasharray="6 6")#motionPath
+        //-   g#motionSVG 
+        //-     g#car
+        //-       +svg ('auto')
+
+        //- .animated-car
+        //-   +svg('vertical-line')
+        //-     include ./src/assets/svg-sprite/vertical-line.svg#motionPath
+        //-     g#motionSVG 
+        //-       g#motion-car 
+        //-         include ./src/assets/svg-sprite/car.svg
+
+        .animated-car
+          picture.animated-car-pic 
+            img(src="assets/images/car-large.png", alt="") 
         .progress-line__container
           .progress-line__inner    
             +svg('leaf')
             .progress-line__circles-wrap
-              .progress-line__circle1
+              .progress-line__circle1.progress-line__circle--empty
                 .progress-line__circle2
                   .progress-line__circle3
             span.progress-line__destination Romankiv village

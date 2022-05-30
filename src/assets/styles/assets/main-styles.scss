@@ -1,21 +1,25 @@
 .container {
-    width: 2000px;
-    padding: 0 110px;
-    margin: 0 auto;
+  padding: 0 110px;
+  margin: 0 auto;
 
-    @include desktop {
-        max-width: 1440px;
-    }
+  @include desktop {
+    padding: 0 80px;
+  }
 
-    @include tabletLarge {
-        max-width: 992px;
-    }
+  @include tabletLarge {
+    padding: 0 50px;
+  }
 
-    @include tablet {
-        max-width: 767px;
-    }
+  @include tablet {
+    padding: 0 50px;
+  }
 
-    @include mobile {
-        max-width: 576px;
-    }       
+  @include mobile {
+    padding: 0 20px;
+  }
+}
+
+button {
+  border: none;
+  background-color: inherit;
 }

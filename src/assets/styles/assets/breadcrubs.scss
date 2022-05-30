@@ -1,51 +1,78 @@
 .breadcrumbs {
-  margin: 0 vw(170, 1920) 30px auto;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 100%;
-  color: #C4C7CC;
-  z-index: 1;
+  justify-content: flex-start;
+  
+
+  &-item__link {
+    position: relative;
+    text-decoration: none;
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #F0F0F0;
+    z-index: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include mobile {
+      font-size: 10px;
+    } 
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 10px;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    // &:first-child {
+    //   &::before {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  &-item__link-home {
+    padding-left: 0;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 10px;
+        width: 1px;
+        background-color: transparent;
+      }
+
+
+  }
   &-list {
     display: flex;
     align-items: center;
     align-content: center;
   }
-  .link__arrow {
-    margin: 0 15px;
-    fill: #C4C7CC;
-    @include to(992px) {
-      margin: 0 20px;
-    }
-    @include to(480px) {
-      margin: 0 15px;
-    }
-  }
 
   @include to(1440px) {
-    margin: 0 vw(110, 1360) 15px auto;
     font-size: 12px;
   }
   @include to(992px) {
-    margin: 0 vw(40, 768) 36px auto;
     font-size: 14px;
   }
   @include to(576px) {
-    margin: 0 vw(20, 320) 20px auto;
     font-size: 10px;
   }
   &-item {
+    
     &:last-child {
-      display: initial;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 23ch;
-      @include to(576px) {
-        max-width: 14ch;
-      }
+      display: none;
     }
   }
 }

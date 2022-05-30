@@ -1,0 +1,634 @@
+.questions {
+  &-main {
+    background-color: $greyBg;
+    position: relative;
+  }
+  &-main__inner {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+  &-bottom-mob {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &-social {
+    display: flex;
+    @include to(680px) {
+      position: static;
+      transform: none;
+    }
+  }
+
+  &-social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 30px;
+    @include tablet {
+      height: 40px;
+      width: 40px;
+      margin-top: 20px;
+    }
+    &:first-child {
+      background-color: #3b5998;
+      margin-right: 20px;
+      @include tablet {
+        margin-right: 14px;
+      }
+    }
+    &:last-child {
+      background: linear-gradient(135deg, #7151d8 0%, #e95962 100%);
+    }
+    svg {
+      height: 40%;
+      width: 40%;
+      stroke: $wc;
+      fill: $wc;
+      transition: stroke 0.3s ease-in-out;
+    }
+  }
+
+  &-popup__top {
+    margin-bottom: 60px;
+    @include tablet {
+      margin-bottom: 50px;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  &-popup__title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    color: $bTitle;
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: 24px;
+    }
+    @include mobile {
+      width: 90%;
+      margin-bottom: 10px;
+    }
+
+  }
+
+  &-popup__descr {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: $grey2;
+    @include tablet {
+      font-size: 15px;
+    }
+
+  }
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	display: none;
+	background-color: rgba(0, 0, 0, .8);
+  z-index: 10;
+  &.modal-open {
+    display: block;
+  }
+}
+.popup {
+	position: absolute;
+  width: 40%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding: 0 128px;
+  box-sizing: border-box;
+  background-image: url(../images/popup-bg-lg.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include tablet {
+    width: 80%;
+    padding: 0 80px;
+  }
+  @include mobile {
+    width: 100%;
+    padding: 68px 20px;
+  }
+
+}
+.close-popup {
+	position: absolute;
+	top: 150px;
+	right: 50px;
+	width: 23px;
+	height: 23px;
+	cursor: pointer;
+  @include mobile {
+    right: 30px;
+    top: 100px;
+  }
+}
+
+.close-popup:before {
+	content: '';
+	background-color: $bTitle;
+	position: absolute;
+	height: 1px;
+	width: 20px;
+	top: 11px;
+	left: -4px;
+	transform: rotate(-45deg);
+}
+
+.close-popup:after {
+	content: '';
+	background-color: $bTitle;
+	position: absolute;
+	height: 1px;
+	width: 20px;
+	top: 11px;
+	transform: rotate(45deg);
+	left: -4px;
+}
+
+.tree {
+  &-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 742px;
+    @include tablet {
+      display: none;
+    }
+  }
+  &-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    max-width: 691px;
+    z-index: 1;
+    @include tablet {
+      display: none;
+    }
+  }
+  
+  
+}
+
+
+.cropped-house {
+  position: absolute;
+  max-width: 1081px;
+  bottom: 0;
+  right: 0;
+  @include tabletLarge {
+    max-width: 768px;
+  }
+  @include tablet {
+    display: none;
+  }
+}
+
+.questions-form {
+  &-field {
+    background-color: $wc;
+    padding: 166px 110px;
+    width: 35%;
+    @include tabletLarge {
+      padding: 100px 50px;
+      width: 40%;
+    }
+    @include tablet {
+      width: 100%;
+      padding: 60px 192px;
+    }
+    @include mobile {
+      padding: 60px 20px;
+    }
+  }
+
+  &-title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    color: $bTitle;
+    @include tabletLarge {
+      font-size: 24px;
+    }
+  }
+}
+
+form {
+  width: 100%;
+}
+.form-label {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  color: #cfa46e;
+  @include to(1440px) {
+    font-size: 16px;
+  }
+  @include to(992px) {
+    font-size: 20px;
+  }
+  @include to(576px) {
+    font-size: 12px;
+  }
+}
+
+.form-field:not(#t) {
+  position: relative;
+  margin-top: 37px;
+  background: none;
+  border-bottom: 1px solid #D2D2D2;
+  transition: all 0.3s;
+  @include tabletLarge {
+    margin-top: 28px;
+  }
+}
+
+[data-animation='focus'] .input-message {
+  position: absolute;
+  top: 50%;
+  left: var(--input-padding);
+  z-index: 3;
+  padding: 0 7px;
+  display: flex;
+  font-weight: 500;
+  font-size: 14px;
+  transform: translate(0%, -50%);
+  user-select: none;
+  pointer-events: none;
+  background-color: #8e8e8e;
+  transition: all 0.16s cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+/*  */
+.form-field-input {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 37px;
+  @include tabletLarge {
+    height: 28px;
+  }
+}
+.form-field__input {
+  width: 100%;
+  font-size: 28px;
+  line-height: 120%;
+  background: none;
+  border: none;
+  color: $bc;
+  @include to(1440px) {
+    font-size: 20px;
+  }
+  @include to(992px) {
+    font-size: 24px;
+    line-height: 140%;
+  }
+  @include to(576px) {
+    font-size: 14px;
+    line-height: 100%;
+  }
+  &::placeholder {
+    color: $bc;
+  }
+  &:focus + .form-field-message {
+    opacity: 1;
+  }
+}
+
+.mask-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 100%;
+  z-index: 10;
+  background-color: red;
+  opacity: 0;
+  @include to(1440px) {
+    width: 45px;
+  }
+  @include to(576px) {
+    width: 35px;
+  }
+}
+
+[data-animation='focus'] .form-field__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: max(vh(16), 16px);
+  color: #000;
+  text-indent: var(--input-padding);
+  background-color: transparent;
+  border: none;
+  @include to(1440px) {
+    font-size: 14px;
+  }
+}
+[data-animation='none'] .form-field__input {
+  padding: 0;
+  width: 100%;
+  border: none;
+  font-size: max(vh(16), 16px);
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
+    font-size: vw(16);
+  }
+  @include to(1440px) {
+    font-size: 20px;
+  }
+  @include to(576px) {
+    font-size: 14px;
+  }
+}
+
+[data-animation='none'] .input-message {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  display: flex;
+  width: 100%;
+  min-height: 12px;
+  font-size: max(vh(14), 14px);
+  line-height: 100%;
+  transform: translate(0%, 100%);
+  @include to(1440px) {
+    font-size: 12px;
+  }
+  @include to(576px) {
+    font-size: 10px;
+  }
+}
+
+[data-field-input][data-status='field--inactive']:not(#r) {
+  .input-message {
+    color: $bc;
+  }
+}
+
+[data-field-input][data-status='field--active']:not(#r) {
+  border-color: $mc;
+  .input-message {
+    color: $mc;
+  }
+}
+
+[data-field-input][data-status='field--error']:not(#r) {
+  border-color: #ea4041;
+  .input-message {
+    color: #ea4041;
+  }
+}
+
+[data-field-input][data-status='field--success']:not(#r) {
+  border-color: #96c480;
+  .input-message {
+    color: #96c480;
+  }
+}
+
+.selected:not(#f) .input-message {
+  top: 0;
+  font-size: 10px;
+}
+
+/*
+  * input end
+  */
+/**********************************/
+
+.requaired-block {
+  &-ico {
+    width: 25px;
+    height: 25px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.requaired-block {
+  &__ico {
+    width: 25px;
+    height: 25px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    font-size: vw(16);
+    line-height: 170%;
+    margin: 0px vw(18);
+    white-space: nowrap;
+
+    color: #bbbec2;
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
+      font-size: vw(16);
+      line-height: 1.4em;
+    }
+    @include to(1440px) {
+      font-size: 12px;
+      margin: 0px 15px;
+    }
+  }
+}
+
+.form-textarea {
+  position: relative;
+  margin: 82px 0 0 0;
+  @include to(1440px) {
+    margin: 40px 0 0 0;
+  }
+  @include to(992px) {
+    margin: 50px 0 0 0;
+  }
+  @include to(576px) {
+    margin: 30px 0 0 0;
+  }
+  textarea {
+    padding: 0;
+    height: 115px;
+    width: 100%;
+    display: flex;
+    background: none;
+    font-size: 28px;
+    line-height: 100%;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
+      font-size: vw(28);
+    }
+    @include to(1440px) {
+      height: 73px;
+      font-size: 20px;
+      line-height: 120%;
+    }
+    @include to(992px) {
+      height: 134px;
+      font-size: 24px;
+      line-height: 140%;
+    }
+    @include to(576px) {
+      height: 74px;
+      font-size: 14px;
+      line-height: 100%;
+    }
+    &::placeholder {
+      color: #ffffff;
+    }
+    &:focus + .form-field-message {
+      opacity: 1;
+    }
+  }
+}
+
+.form-field-message {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  font-size: 12px;
+  line-height: 120%;
+  color: #828282;
+  transform: translateY(calc(-100% - 10px));
+  //margin: 10px 0 0 0;
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
+    font-size: vw(16);
+  }
+  @include to(1440px) {
+    //margin: 10px 0 0 0;
+    font-size: 12px;
+  }
+  @include to(576px) {
+    font-size: 14px;
+  }
+}
+
+.requaired-block-ico--position {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+//checkbox
+
+@mixin appearNone {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+@mixin focusShadow($element) {
+  &:focus {
+    ~ #{$element} {
+      box-shadow: 0 0 0 4px rgba(47, 86, 212, 0.1);
+    }
+  }
+}
+
+label,
+input {
+  cursor: pointer;
+}
+
+label.checkbox {
+  display: inline-flex;
+  $transition: 0.2s all ease-in-out;
+  position: relative;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  @include tabletLarge {
+    margin-bottom: 40px;
+  }
+
+  .checkbox-icon {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: solid 1px #d6dce3;
+    background-color: #f0f3f6;
+    transition: $transition;
+    margin-right: 15px;
+    @include mobile {
+      margin-right: 10px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transition: $transition;
+      background: url(../images/checked.svg);
+      background-repeat: no-repeat;
+      background-size: 65%;
+      background-position: center center;
+      transform: scale(1.3);
+      opacity: 0;
+    }
+  }
+
+  input[type='checkbox'] {
+    @include appearNone;
+    &:checked {
+      + .checkbox-icon {
+        border-color: #8cb90c;
+        background: #8cb90c;
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+          background: url(../images/checked.svg);
+          background-repeat: no-repeat;
+          background-size: 65%;
+          background-position: center center;
+        }
+      }
+    }
+
+    @include focusShadow('.checkbox-icon');
+  }
+
+  &.checkbox-circular {
+    .checkbox-icon {
+      border-radius: 50%;
+    }
+  }
+}

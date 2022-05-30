@@ -9,20 +9,39 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/news-main.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/development-video.js')
+  script(defer src='./assets/scripts/answers-main.js')
+  script(defer src='./assets/scripts/location-main.js')
+  script(defer src='./assets/scripts/maps-main.js')
+  script(defer src='./assets/scripts/questions-main.js')
+  
 
 block header
   include ../includes/header.pug
+  include ../includes/menu.pug
 block content
   include ../includes/home-main.pug
   include ../includes/trusted-main.pug
   include ../includes/sale-main.pug
   include ../includes/location-main.pug
+  include ../includes/maps-main.pug
   include ../includes/visual-main.pug
+  include ../includes/development-video.pug
   include ../includes/development-progress.pug
   include ../includes/details-main.pug
+  include ../includes/conditions-main.pug
+  include ../includes/questions-main.pug
+  include ../includes/news-main.pug
+  include ../includes/answers-main.pug
   
 
+block modal 
+  include ../includes/questions-popup.pug
 
+  
 
 block footer
   include ../includes/footer.pug

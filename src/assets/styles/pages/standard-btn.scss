@@ -12,9 +12,14 @@
 .btn-link {
     text-decoration: none;
     letter-spacing: 0.2em;
+    font-size: 15px;
     text-transform: uppercase;
     color: #0E0E0E;
     margin-right: 40px;
+    @include tabletLarge {
+        font-size: 12px;
+        margin-right: 30px;
+    }
 }
 
 .btn-svg {
@@ -23,17 +28,36 @@
 
 .btn-arrow {
     position: absolute;
-    top: 30%;
+    top: 34%;
     transform: translateX(-50%);
     transition: ease-in-out 0.7s;
+    @include tabletLarge {
+        top: 22%;
+    }
 }
 
 .btn-arrow svg{
     max-width: 50px;
-    height: 9px;
+    height: 10px;
+    
+    @include tabletLarge {
+        max-width: 34px;
+        height: 6px;
+    }
 }
 
-.btn-circle svg {
+.btn-circle {
+    height: 60px;
+    @include tabletLarge {
+        height: 40px;
+    }
+}
+
+.btn-circle svg{
     max-width: 50px;
     height: 60px;
+    @include tabletLarge {
+        max-width: 36px;
+        height: 40px;
+    }
 }

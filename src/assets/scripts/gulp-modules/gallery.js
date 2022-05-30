@@ -1,5 +1,4 @@
 function initSlider() {
-  // eslint-disable-next-line no-undef
   const swiper = new Swiper('.js-gallery__slider', {
     loop: true,
     navigation: {

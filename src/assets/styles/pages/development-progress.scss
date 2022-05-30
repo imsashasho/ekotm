@@ -1,121 +1,177 @@
 .development-progress {
-    background-image: url(/src/assets/images/road-map-bg.png);
-    background-size: cover;
-    height: 420px;
+  background-image: url(../images/road-map-bg.png);
+  background-size: cover;
+  height: 420px;
+  @include tabletLarge {
+    height: 300px;
+  }
+  @include tablet {
+    display: none;
+  }
 
-    &__inner {
-        max-width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
+  &__inner {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .development-line {
-    position: relative;
+  position: relative;
+  display: flex;
+  align-items: top;
+  width: 100%;
+  justify-content: space-between;
+
+  &__inner {
     display: flex;
-    align-items: top;
-    max-width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    max-width: 14%;
+  }
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        max-width: 14%;
+  &__mounth {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 120%;
+    color: $wc;
+    margin-bottom: 58px;
+    @include tabletLarge {
+      font-size: 12px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__circles-wrap {
+    position: relative;
+    margin-bottom: 40px;
+    @include tabletLarge {
+      margin-bottom: 35px;
     }
 
-    &__mounth {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 120%;
-        color: $wc;
-        margin-bottom: 58px;
+    &__circle-wrap:first-child {
+      .development-line__circle1 {
+        &::before {
+          display: none;
+        }
+      }
     }
-    
+  }
 
-    &__circles-wrap {
-        position: relative;
-        margin-bottom: 40px;
+  &__circle1 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+    @include tabletLarge {
+      width: 40px;
+      height: 40px;
     }
-
-    &__circle1 {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        background-image:
-            linear-gradient( rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
-            linear-gradient(black, black);
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    &__circle2 {
-        transform: translate(25%, 25%);
-        width: 35px;
-        height: 35px;
-        background-image:
-            linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-            linear-gradient(black, black);
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    &__circle3 {
-        transform: translate(48%, 46%);
-        width: 17px;
-        height: 17px;
-        background-image:
-            linear-gradient( rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
-            linear-gradient(black, black);
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    &__descr {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
-        color: $wc;
-    }
-
-    &__dashed-line1 {
+      &::before {
         position: absolute;
-        width: 86%;
-        height: 0;
-        top: 50%;
-        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-        transform: translateY(-25px);
-    }
-
-    &__dashed-line2 {
-        position: absolute;
-        width: 52%;
-        height: 0;
-        top: 50%;
-        border-bottom: 1px dashed $wc;
-        transform: translateY(-25px);
-    }
-
-    &__animated-leaf {
-        position: absolute;
-        transform: translateY(-75px);
+        content: "";
+        background-image: url(../images/vertical-line.svg);
+        z-index: 0;
+        height: 134px;
+        width: 2px;
         left: 50%;
-        top: 50%;
+        top: 0;
+        transform: translateY(-50px);
+      }
+  }
+  &__circle--empty {
+    &::before {
+      display: none;
     }
+  }
 
-    &__animated-leaf svg{
-        height: 54px;
-        width: 42px;
-        
+
+
+  &__circle2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    @include tabletLarge {
+      width: 28px;
+      height: 28px;
     }
+  }
 
+  &__circle3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    @include tabletLarge {
+      width: 12px;
+      height: 12px;
+    }
+  }
 
+  &__descr {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: $wc;
+    @include tabletLarge {
+      font-size: 18px;
+    }
+  }
 
+  &__dashed-line1 {
+    position: absolute;
+    width: 86%;
+    height: 0;
+    top: 105px;
+    left: 30px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    @include tabletLarge {
+      left: 25px;
+      top: 70px;
+    }
+  }
 
+  &__dashed-line2 {
+    position: absolute;
+    width: 52%;
+    height: 0;
+    top: 105px;
+    left: 30px;
+    border-bottom: 1px dashed $wc;
+    @include tabletLarge {
+      width: 50%;
+      left: 25px;
+      top: 70px;
+    }
+  }
 
+  &__animated-leaf {
+    position: absolute;
+    transform: translateY(-75px);
+    left: 50%;
+    top: 105px;
+    @include tabletLarge {
+      top: 93px;
+    }
+  }
 
+  &__animated-leaf svg {
+    height: 54px;
+    width: 42px;
+  }
 }

@@ -1,0 +1,83 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news'
+    var id_page = 'id-page-news'
+    var class_page = 'class-page-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Новини та акції',
+        link: pagesLink[0].news
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/news.js')
+block header
+  include ../includes/header.pug
+block content
+  section.news
+    .news-left
+      include ../includes/breadcrumbs.pug
+      h1.news-title Новини та акції
+      .news-filters 
+        span.news-filter(data-filter='all') Всі
+        span.news-filter(data-filter='news') Новини
+        span.news-filter(data-filter='promo') Акції
+    .news-right
+      .news-right__large
+        .news-item(data-filter="news")
+          a(href="news-single-page.html").news-item__link 
+            .news-item-img 
+              img(src="assets/images/news-page1.png", alt="")
+              .news-item-text
+                span.news-item-title Останній цінопад цієї весни
+                span.news-item-date 10.01.2022
+        .news-item(data-filter="promo")
+          a(href="#").news-item__link 
+            .news-item-img 
+              img(src="assets/images/news-page2.png", alt="")
+              .news-item-text
+                span.news-item-title Чорна п’ятниця! Реальні знижки до 60 000 грн 
+                span.news-item-date 10.01.2022
+            .news-item-promo 
+              span Акція
+      .news-right__small
+        .news-item(data-filter="news")
+          a(href="#").news-item__link 
+            .news-item-img 
+              img(src="assets/images/news-page4.png", alt="")
+              .news-item-text
+                span.news-item-title Розтермінування 0% 
+                span.news-item-date 10.01.2022
+        .news-item(data-filter="promo")
+          a(href="#").news-item__link 
+            .news-item-img 
+              img(src="assets/images/news-page1.png", alt="")
+              .news-item-text
+                span.news-item-title Здійснюйте бажання   
+                span.news-item-date 10.01.2022
+            .news-item-promo 
+              span Акція
+        .news-item(data-filter="news")
+          a(href="#").news-item__link 
+            .news-item-img 
+              img(src="assets/images/news-page1.png", alt="")
+              .news-item-text
+                span.news-item-title 10% знижки на будинки з ...
+                span.news-item-date 10.01.2022
+
+        
+block footer
+  include ../includes/footer.pug

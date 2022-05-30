@@ -1,0 +1,190 @@
+#id-page-documents .header {
+    background: rgba(24, 24, 24, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+#id-page-documents .header.on {
+    background-color: $bTitle;
+}
+.documents {
+    display: flex;
+    padding-top: var(--header-h);
+    justify-content: space-between;
+    @include tablet {
+        flex-direction: column;
+    } 
+    
+    &-left {
+        background-image: url(../images/black-bg.png);
+        background-size: cover;
+        padding: 100px 22px 80px 110px;
+        width: 39%; 
+        @include tablet {
+            width: 100%;
+            padding: 50px;
+        }
+        @include mobile {
+            padding: 30px 20px;
+        }   
+    }
+
+    &-title {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 110%;
+        color: $wc;
+        margin-top: 20px;
+        @include mobile {
+            font-size: 24px;
+        } 
+    }
+
+    &-intro {
+        margin-top: 50px;
+        width: 87%;
+
+        & p {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #C1C1C1;
+            margin-bottom: 20px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    &-right {
+        background-color: $greyBg;
+        padding: 133px 110px;
+        width: 61%;
+        @include tablet {
+            width: 100%;
+            padding: 50px;
+        }
+        @include mobile {
+            padding: 30px 20px;
+        } 
+    }
+
+    &-item {
+        display: flex;
+        border-bottom: 1px solid #D2D2D2;
+        padding-bottom: 20px;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-top: 30px;
+        
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            margin-top: 20px;
+        } 
+        &:first-child {
+            @include mobile {
+                margin-top: 0;
+            } 
+
+        }
+        & iframe {
+            @include mobile {
+                position: absolute;
+                top: 0;
+
+            } 
+        }
+    }
+
+    &-text {
+        display: flex;
+        margin-left: 30px;
+        flex-direction: column;
+        width: 70%;
+        @include mobile {
+            width: 60%;
+            margin-left: 86px;
+        } 
+    }
+
+    &-text-title {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        color: $bTitle;
+        margin-top: 17px;
+        width: 40%;
+        @include tablet {
+            width: 70%;
+            font-size: 15px;
+            margin-top: 15px;
+        }
+        @include mobile {
+            width: 100%;
+        } 
+
+    }
+
+    &-date {
+        font-size: 12px;
+        font-weight: 500;
+        color: #676863;
+        position: relative;
+        margin-left: 22px;
+        @include mobile {
+            font-size: 10px;
+        } 
+        &::before {
+            content: '';
+            background-image: url(../images/clock-grey.svg);
+            width: 12px;
+            height: 12px;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            left: -22px;
+            bottom: 0;
+            transform: translateY(-50%);
+            @include mobile {
+                width: 10px;
+                height: 10px;
+            } 
+        }
+    }
+}
+
+.documents-btn {
+    margin-top: 50px;
+    @include tablet {
+        margin-top: 30px;
+    }
+}
+
+.documents-link {
+    color: $wc !important;
+}
+
+.download-btn {
+    margin-top: 50px;
+    @include tablet {
+        margin-top: 30px;
+    }
+    @include mobile {
+        margin-top: 15px;
+        margin-left: 86px;
+    } 
+}
+
+.download-link {
+    color: $bc;
+}
+

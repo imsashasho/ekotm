@@ -1,12 +1,46 @@
 footer.footer
-  p.footer-copy © 2021 BEREG Residence
-  .footer-social
-      a(href='fb').social
-        +svg('fb')
-      a(href='instagram').social
-        +svg('instagram')
-      a(href='youtube').social
-        +svg('youtube')
-  .footer-dev
-    .footer-dev__text Розробка сайту
-    a(href="https://smarto.agency/" rel="nofollow" target="_blank").footer-dev__link Smart Orange
+  img(src="assets/images/white-leaf.png", alt="").footer-leaf
+  .footer-top
+    .footer-top__inner.container 
+      .footer-top-left 
+        .footer-request 
+          spam.footer-number + 38 096 273 23 18
+          .standard-btn.footer-btn
+            a(href="#" data-btn-submit-text).btn-link замовити дзвінок
+            .btn-svg
+              .btn-arrow
+                +svg ('arrow')
+              .btn-circle
+                +svg ('circle')
+      .footer-top-right
+        .footer-location 
+          p.footer-address м. Київ, Київська обл, <br> пгт. Романків, 21
+          .standard-btn.footer-btn
+            a(href="#" data-btn-submit-text).btn-link google maps
+            .btn-svg
+              .btn-arrow
+                +svg ('arrow')
+              .btn-circle
+                +svg ('circle')
+  .footer-bottom
+    .footer-bottom__inner.container
+      .footer-bottom-block
+        .footer-social
+          a(href='fb').footer-social-link.social-fb
+            +svg('facebook')
+          a(href='instagram').footer-social-link.social-instagram
+            +svg('instagram')
+        .footer-links 
+          a(href="#") Обрати квартиру
+          a(href="#") Розташування
+          a(href="#") Хід будівництва
+          a(href="#") Переваги
+          a(href="#") Новини та акції
+        .footer-up 
+          a(href="#") вгору
+            +svg ('arrow-up')
+      .footer-bottom-additional
+        p.footer-copy © Romankiv Village 2021.
+        .footer-dev
+          a(href="https://smarto.agency/" rel="nofollow" target="_blank").footer-dev__link
+            +svg ('logo_smart_orange')

@@ -1,0 +1,191 @@
+.answers {
+    &-main {
+        display: flex;
+        position: relative;
+        @include tablet {
+            flex-direction: column;
+        }
+        
+    }
+
+    &-main-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 86px 318px 86px 110px;
+        background-color: $greyBg;
+        @include tabletLarge {
+            padding: 50px;
+        }
+        @include tablet {
+            width: 100%;
+            position: relative;
+            padding: 50px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 192px;
+                z-index: 44;
+                background-image: url(../images/white-leaf.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        @include mobile {
+            width: 100%;
+            padding: 60px 20px;
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &-title {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 110%;
+        color: $bTitle;
+        margin-bottom: 40px;
+        @include tabletLarge {
+            font-size: 36px;
+            width: 65%;
+            margin-bottom: 30px;
+        }
+        @include mobile {
+            font-size: 24px;
+            width: 80%;
+        }
+    }
+
+    &-slider {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        max-height: 340px;
+        @include tabletLarge {
+            width: 75%;
+            max-height: 218px;
+        }
+        @include mobile {
+            position: relative;
+            overflow: initial;
+            width: 100%;
+        }
+
+    }
+
+    &-slider__ctr {
+        @include mobile {
+            position: absolute;
+            bottom: -50px;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &-slider__item {
+        padding: 30px 40px 25px 40px;
+        background-color: $wc;
+        @include tabletLarge {
+            padding: 20px 30px;
+        }
+    }
+
+    &__item-title {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: $bTitle;
+        margin-bottom: 15px;
+        @include tabletLarge {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        
+    }
+
+    &__item-descr {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        color: $grey2;
+        @include tabletLarge {
+            font-size: 15px;
+        }
+    }
+
+    &-slider__arrows {
+        margin-left: 30px;
+        @include mobile {
+            margin-left: 0;
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+         svg {
+             width: 15px;
+         }
+    }
+
+    &-slider-prev {
+        @include mobile {
+            transform: rotate(-90deg);
+        }
+    }
+    &-slider-next {
+        @include mobile {
+            transform: rotate(-90deg);
+        }
+    }
+
+    &-btn {
+        margin-top: 40px;
+        @include tabletLarge {
+            margin-top: 30px;
+        }
+        @include mobile {
+            margin-top: 83px;
+        }
+    }
+
+
+
+
+    &-main-right {
+        width: 50%;
+        @include tablet {
+            width: 100%;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-decoration {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        @include tablet {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+}

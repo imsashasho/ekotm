@@ -1,0 +1,104 @@
+.map {
+    &-main {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    &-wrapper {
+        position: relative;
+        & iframe {
+            width: 100%;
+            height: 100vh;
+        }
+    }
+    &-navigation {
+        position: absolute;
+        bottom: 0;
+        background-color: #181818;
+        @include mobile {
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &-navigation__header {
+        padding: 30px 110px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 110%;
+        color: $wc;
+        @include tabletLarge {
+            padding: 20px 50px;
+            font-size: 36px;
+        }
+    }
+
+    &-navigation__main {
+        padding: 43px 110px;
+        @include tabletLarge {
+            padding: 20px 50px;
+        }
+    }
+
+    &-navigation__item {
+        margin-bottom: 30px;
+        @include tabletLarge {
+            margin-bottom: 20px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-navigation__button{
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: fit-content;
+        & svg {
+            max-width: 24px;
+            height: 24px;
+            @include tabletLarge {
+                max-width: 18px;
+                max-width: 18px;
+            }
+        }
+
+        & span {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 120%;
+            color: $wc;
+            margin-left: 20px;
+            @include tabletLarge {
+                font-size: 12px;
+            }
+        }
+       
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 12px;
+            height: 1px; 
+            background-color: $wc; 
+            right: -37px;         
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 12px; 
+            background-color: $wc; 
+            right: -32px;         
+        }
+    }
+
+}
