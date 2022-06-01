@@ -198,6 +198,7 @@
 
   &-up {
     position: relative;
+    z-index: 1000;
     @include mobile {
       position: absolute;
       bottom: 0;

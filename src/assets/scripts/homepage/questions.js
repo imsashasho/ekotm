@@ -2,7 +2,6 @@
 
 // const { object } = require("yup");
 
-
 // export default class SexyInput {
 //   constructor(setting) {
 //     this.selected = false;
@@ -165,43 +164,30 @@
 //   }
 // }
 
-const popupFactory = ref => ({
-  open() {
-    this.element.classList.add('modal-open');
-  },
-  close() {
-    this.element.classList.remove('modal-open');
-  },
-  toggle() {
-    this.element.classList.toggleClass('modal-open');
-  },
-  element: ref,
-});
+{
+  const popupFactory = ref => ({
+    open() {
+      this.element.classList.add('modal-open');
+    },
+    close() {
+      this.element.classList.remove('modal-open');
+    },
+    toggle() {
+      this.element.classList.toggleClass('modal-open');
+    },
+    element: ref,
+  });
 
-const successPopup = popupFactory(document.querySelector('.questions-modal'));
-console.log(successPopup);
-const questionFormRef = document.querySelector('.questions-form');
-const closeBtnRef = document.querySelector('.close-popup');
-questionFormRef.addEventListener('submit', (event) => {
-  event.preventDefault();
-  successPopup.open();
-});
-closeBtnRef.addEventListener('click', () => {
-  successPopup.close();
-});
-// $('.questions-btn').on('click', () => {
-//   $('.overlay').fadeIn();
-// });
+  const successPopup = popupFactory(document.querySelector('.questions-modal'));
+  const questionFormRef = document.querySelector('.questions-form');
+  const closeBtnRef = document.querySelector('.close-popup');
 
-// // Закрытие окна
-// $('.close-popup').on('click', () => {
-//   $('.overlay').fadeOut();
-// });
+  questionFormRef.addEventListener('submit', event => {
+    event.preventDefault();
+    successPopup.open();
+  });
 
-
-// $('.questions-btn').on('click', () => {
-//   $('.overlay').toggleClass('modal-open');
-// });
-// $('.close-popup').on('click', () => {
-//   $('.overlay').toggleClass('modal-open');
-// });
+  closeBtnRef.addEventListener('click', () => {
+    successPopup.close();
+  });
+}

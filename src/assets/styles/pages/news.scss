@@ -73,7 +73,12 @@
         letter-spacing: 0.02em;
         text-transform: uppercase;
         color: $wc;
-        margin-right: 40px;       
+        margin-right: 40px;  
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom: 1px solid #8CB90C;
+          transition: ease-in 0.3s;
+        }     
     }
 
     &-right {

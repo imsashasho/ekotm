@@ -1,4 +1,4 @@
-(function () {
+{
   const swiper = new Swiper('.news-slider', {
     grabCursor: true,
     loop: true,
@@ -27,7 +27,6 @@
         autoHeight: true,
         centeredSlides: false,
       },
-
     },
     simulateTouch: true,
     navigation: {
@@ -39,6 +38,5 @@
       clickable: true,
       type: 'progressbar',
     },
-
   });
-}());
+}

@@ -1,4 +1,4 @@
-(function () {
+{
   const swiper = new Swiper('.answers-slider', {
     grabCursor: true,
     loop: false,
@@ -21,7 +21,6 @@
         centeredSlides: true,
         direction: 'horizontal',
       },
-
     },
 
     simulateTouch: true,
@@ -30,4 +29,4 @@
       prevEl: '.answers-slider-prev',
     },
   });
-}());
+}

@@ -49,11 +49,19 @@
   &-wrap {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 621px;
     display: flex;
     margin-top: 50px;
+    @include tabletLarge {
+      height: 464px;
+    }
     @include tablet {
-      flex-direction: column;
+      height: 673px;
+      flex-wrap: wrap;
+    }
+    @include mobile {
+      height: auto;
+      margin-top: 0;
     }
   }
 
@@ -96,7 +104,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mobile {
+    @include tablet {
         padding: 14px 20px;
     }
   }
@@ -105,7 +113,7 @@
     font-size: 15px;
     font-weight: 500;
     transition: opacity 0.3s;
-    @include mobile {
+    @include tablet {
         font-size: 12px;
     }
 
@@ -116,7 +124,7 @@
     font-weight: 500;
     transition: opacity 0.3s;
     position: relative;
-    @include mobile {
+    @include tablet {
         font-size: 10px;
     }
     &::before {
@@ -130,7 +138,7 @@
         left: -22px;
         bottom: 0;
         transform: translateY(-50%);
-        @include mobile {
+        @include tablet {
             width: 10px;
             height: 10px;
         }
@@ -138,99 +146,94 @@
 }
 }
   
-  .swiper-development-video {
-      height: 100vh;
-      // width: 100%;
-      position: relative;
-      @include tablet {
-        order: 3;
-      }
-  
-      &__wrp {
-          height: 100%;
-          // width: 100%;
-      }
-  
-      &-slide {
-          height: 100%;
-          width: 100%;
-      }
-  
-      img {
-          // max-height: 100%;
-          // max-width: 100%;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          @include mobile {
-            height: 83vh;
-          }
-      }
-  }
   
   .development-video-thumbnails {
       box-sizing: border-box;
-      height: 100vh;
-      width: 45%;
+      width: 28%;
+      height: 100%;
       margin-right: 50px;
 
       @include tablet {
+        margin-right: 0;
         height: 220px;
         width: 100%;
         order: 1;
       }
-      @include mobile {
-        display: none;
-      }
-      // &__wrp {
-      //   @include tablet {
-      //   display: flex;
-      //   flex-direction: row;
-      //   }
+      // @include mobile {
+      //   display: none;
       // }
   
       .swiper-slide {
           cursor: pointer;
+          height: 285px;
           @include tablet {
-            width: 50%;
+            order: 1;
+            height: 217px;
           }
       }
   
       img {
           // max-height: 100%;
           // max-width: 100%;
-          height: 100%;
+          height: 285px;
           width: 100%;
+          object-fit: cover;
+          @include tabletLarge {
+            height: 217px;
+          }
           
       }
   }
   
   .development-video {
-      &__ctr-wrap {
-        display: flex;
-        flex-direction: column;
-        z-index: 12;
-        margin-right: 58px;
-        @include tablet {
-          flex-direction: row;
-          margin-right: 0;
-          order: 2;
-        }
+    height: 100%;
+    width: 100%;
+    border: none;
+
+    &-container {
+      position: relative;
+      width: 60%;
+      height: 100%;
+      @include tablet {
+        order: 3;
+        width: 95%;
+        height: 363px;
       }
+      @include mobile {
+        height: 190px;
+        width: 100%;
+        margin-top: 40px;
+      }
+
+    }
+    &__ctr-wrap {
+      display: flex;
+      flex-direction: column;
+      z-index: 12;
+      margin-right: 58px;
+      @include tablet {
+        flex-direction: row;
+        width: 100%;
+        margin-right: 0;
+        order: 2;
+      }
+      @include mobile {
+        margin-top: 20px;
+      }
+    }
       &__ctr {
           display: flex;
           justify-content: space-between;
           align-items: center;
           flex-direction: column;
-          height: 100vh;
+          height: 100%;
           @include tablet {
             flex-direction: row;
             height: fit-content;
-            width: 100%;
+            width: 99%;
           }
-          
           @include mobile {
-            margin-top: 30px;
+            width: 95%;
           }
         }
       &__arrows {
@@ -242,8 +245,7 @@
       } 
     
     
-      &__arrow {
-          
+      &__arrow {         
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -259,13 +261,19 @@
             display: inline-flex;
           }
       }
+
+      &-prev {
+        @include tablet {
+          margin-bottom: 20px;
+        }
+      }
     
-        &__pagination {
-          text-align: center;
-          width: 70%;
-          @include tablet {
-            width: 65%;
-          }
+      &__pagination {
+        text-align: center;
+        width: 70%;
+        @include tablet {
+          width: 65%;
+        }
     
           &.swiper-pagination-progressbar {
             position: relative;
@@ -296,6 +304,110 @@
           }
         }
   }
+.camera {
+
+  &-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    @include tablet {
+      order: 4;
+      width: 5%;
+      padding-bottom: 55px;
+      padding-top: 60px;
+    }
+    @include mobile {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-top: 20px;
+      width: 100%;
+      padding-left: 20px;
+    }
+  }
+  &-btn {
+    position: relative;
+    transform: rotate(90deg);
+    width: max-content;
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #283013;
+    @include tablet {
+      font-size: 12px;
+    }
+    @include mobile {
+      transform: rotate(0);
+    }
+
+    &::before {
+      content: '';
+      background-image: url(../images/cam-inactive.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 13px;
+      width: 15px;
+      position: absolute;
+      left: -20px;
+    }
+    &::after {
+      content: '';
+      width: 112px;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translate(100%, -50%);
+      @include tabletLarge {
+        right: -10px;
+        width: 50px;
+      }
+      @include tablet {
+        width: 20px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+
+  } 
+}
+
+.active-camera {
+  &::before {
+    background-image: url(../images/cam.svg);
+  }
+}
+
+.poster-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: all ease-in 0.3s;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 
 
     

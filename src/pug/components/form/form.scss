@@ -1,16 +1,12 @@
-/**********************************/
-/*
-* input start
-*/
+
 form {
-  --input-padding: 23px;
   width: 100%;
 }
 .form-label {
   font-weight: 400;
   font-size: 22px;
   line-height: 140%;
-  color: #CFA46E;
+  color: #cfa46e;
   @include to(1440px) {
     font-size: 16px;
   }
@@ -24,22 +20,17 @@ form {
 
 .form-field:not(#t) {
   position: relative;
-  margin: 60px 0 0;
+  margin-top: 37px;
   background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 15px;
+  border-bottom: 1px solid #D2D2D2;
   transition: all 0.3s;
-  @include to(1440px){
-    margin: 40px 0 0;
-  }
-  @include to(992px){
-    margin: 50px 0 0;
-  }
-  @include to(576px){
-    margin: 30px 0 0;
+  @include tabletLarge {
+    margin-top: 28px;
   }
 }
 
-[data-animation="focus"] .input-message {
+[data-animation='focus'] .input-message {
   position: absolute;
   top: 50%;
   left: var(--input-padding);
@@ -52,7 +43,7 @@ form {
   user-select: none;
   pointer-events: none;
   background-color: #8e8e8e;
-  transition: all 0.16s cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  transition: all 0.16s cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
 
 /*  */
@@ -60,26 +51,20 @@ form {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 60px;
-  @include to(1440px) {
-    height: 40px;
-  }
-  @include to(992px) {
-    height: 55px;
-  }
-  @include to(576px) {
-    height: 35px;
+  height: 37px;
+  @include tabletLarge {
+    height: 28px;
   }
 }
 .form-field__input {
   width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   line-height: 120%;
   background: none;
   border: none;
-  color: #FFFFFF;
+  color: $bc;
   @include to(1440px) {
-    font-size: 20px;
+    font-size: 16px;
   }
   @include to(992px) {
     font-size: 24px;
@@ -90,62 +75,10 @@ form {
     line-height: 100%;
   }
   &::placeholder {
-    color: #ffffff;
+    color: $bc;
   }
   &:focus + .form-field-message {
     opacity: 1;
-  }
-}
-.main-button {
-  margin: 60px 0 0 auto;
-  display: flex;
-  align-items: center;
-  font-family: $default-font;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 1em;
-  color: #CFA46E;
-  border: none;
-  background: none;
-  white-space: nowrap;
-  text-decoration: none;
-  @include to(1440px) {
-    margin: 40px 0 0 auto;
-    font-size: 20px;
-    line-height: 1.2em;
-  }
-  @include to(992px) {
-    margin: 50px 0 0 auto;
-    font-size: 28px;
-    line-height: 1em;
-  }
-  @include to(576px) {
-    margin: 30px 0 0 auto;
-    font-size: 14px;
-  }
-
-  &__arrow {
-    display: flex;
-    width: 70px;
-    height: 13px;
-    margin: 0 0 0 50px;
-    svg {
-      height: 100%;
-      fill: #CFA46E;
-    }
-    @include to(1440px) {
-      width: 50px;
-      height: 9px;
-      margin: 0 0 0 20px;
-    }
-    @include to(992px) {
-      margin: 0 0 0 30px;
-    }
-    @include to(576px) {
-      width: 34px;
-      height: 6px;
-      margin: 0 0 0 20px;
-    }
   }
 }
 
@@ -166,7 +99,7 @@ form {
   }
 }
 
-[data-animation="focus"] .form-field__input {
+[data-animation='focus'] .form-field__input {
   position: absolute;
   top: 0;
   left: 0;
@@ -178,27 +111,27 @@ form {
   text-indent: var(--input-padding);
   background-color: transparent;
   border: none;
-  @include to(1440px){
+  @include to(1440px) {
     font-size: 14px;
   }
 }
-[data-animation="none"] .form-field__input {
+[data-animation='none'] .form-field__input {
   padding: 0;
   width: 100%;
   border: none;
   font-size: max(vh(16), 16px);
-  @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
     font-size: vw(16);
   }
-  @include to(1440px){
+  @include to(1440px) {
     font-size: 20px;
   }
-  @include to(576px){
+  @include to(576px) {
     font-size: 14px;
   }
 }
 
-[data-animation="none"] .input-message {
+[data-animation='none'] .input-message {
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -214,34 +147,32 @@ form {
   @include to(576px) {
     font-size: 10px;
   }
-
 }
 
-
-[data-field-input][data-status="field--inactive"]:not(#r) {
+[data-field-input][data-status='field--inactive']:not(#r) {
   .input-message {
-    color: #fff;
+    color: $bc;
   }
 }
 
-[data-field-input][data-status="field--active"]:not(#r) {
+[data-field-input][data-status='field--active']:not(#r) {
   border-color: $mc;
   .input-message {
     color: $mc;
   }
 }
 
-[data-field-input][data-status="field--error"]:not(#r) {
-  border-color: #EA4041;
+[data-field-input][data-status='field--error']:not(#r) {
+  border-color: #ea4041;
   .input-message {
-    color: #EA4041;
+    color: #ea4041;
   }
 }
 
-[data-field-input][data-status="field--success"]:not(#r) {
-  border-color: #96C480;
+[data-field-input][data-status='field--success']:not(#r) {
+  border-color: #96c480;
   .input-message {
-    color: #96C480;
+    color: #96c480;
   }
 }
 
@@ -251,10 +182,9 @@ form {
 }
 
 /*
-* input end
-*/
+  * input end
+  */
 /**********************************/
-
 
 .requaired-block {
   &-ico {
@@ -284,16 +214,14 @@ form {
     margin: 0px vw(18);
     white-space: nowrap;
 
-    color: #BBBEC2;
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
+    color: #bbbec2;
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
       font-size: vw(16);
       line-height: 1.4em;
-
     }
-    @include to(1440px){
+    @include to(1440px) {
       font-size: 12px;
       margin: 0px 15px;
-
     }
   }
 }
@@ -301,13 +229,13 @@ form {
 .form-textarea {
   position: relative;
   margin: 82px 0 0 0;
-  @include to(1440px){
+  @include to(1440px) {
     margin: 40px 0 0 0;
   }
-  @include to(992px){
+  @include to(992px) {
     margin: 50px 0 0 0;
   }
-  @include to(576px){
+  @include to(576px) {
     margin: 30px 0 0 0;
   }
   textarea {
@@ -318,23 +246,23 @@ form {
     background: none;
     font-size: 28px;
     line-height: 100%;
-    color: #FFFFFF;
+    color: #ffffff;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
       font-size: vw(28);
     }
-    @include to(1440px){
+    @include to(1440px) {
       height: 73px;
       font-size: 20px;
       line-height: 120%;
     }
-    @include to(992px){
+    @include to(992px) {
       height: 134px;
       font-size: 24px;
       line-height: 140%;
     }
-    @include to(576px){
+    @include to(576px) {
       height: 74px;
       font-size: 14px;
       line-height: 100%;
@@ -357,14 +285,14 @@ form {
   color: #828282;
   transform: translateY(calc(-100% - 10px));
   //margin: 10px 0 0 0;
-  @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px) {
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
     font-size: vw(16);
   }
   @include to(1440px) {
     //margin: 10px 0 0 0;
     font-size: 12px;
   }
-  @include to(576px){
+  @include to(576px) {
     font-size: 14px;
   }
 }
