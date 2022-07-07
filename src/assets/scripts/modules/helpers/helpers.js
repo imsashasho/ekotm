@@ -16,8 +16,30 @@ export const eases = {
 export const langDetect = () => {
   if (window.location.pathname.match(/\/ru\//)) {
     return 'ru';
-  } if (window.location.pathname.match(/\/en\//)) {
+  }
+  if (window.location.pathname.match(/\/en\//)) {
     return 'en';
   }
   return 'uk';
+};
+
+export const addIntersectionOnceWithCallback = (el, cb = () => {}) => {
+  const image = el;
+  const target = image;
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const lazyImage = entry.target;
+          cb();
+          observer.unobserve(target);
+        }
+      });
+    },
+    {
+      rootMargin: '0px',
+      threshold: 0.1,
+    },
+  );
+  observer.observe(target);
 };

@@ -7,8 +7,10 @@
 	flex-direction: column;
 	z-index: 2;
   min-height: 100vh;
+  flex: 1;
 	.page__content {
 		flex-grow: 1;
+    overflow: hidden;
 	}
 	.page__footer-wrapper {
 		flex-shrink: 0;

@@ -9,8 +9,6 @@
     }
   }
 
-  
-
   &__inner {
     max-width: 100%;
     display: flex;
@@ -37,6 +35,8 @@
       background-image: url(../images/trusted-bg-bc-tablet.png);
       width: 100%;
       padding: 98px 50px;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     @include mobile {
@@ -71,6 +71,7 @@
   }
 
   &__left-descr {
+    opacity: 0;
     font-family: $default-font;
     font-style: normal;
     font-weight: normal;
@@ -93,11 +94,14 @@
   &__right {
     width: 40%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     @include tablet {
       background-image: url(../images/trusted-bg-wc-tablet.png);
       padding: 97px 146px;
       width: 100%;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   
     @include mobile {
@@ -113,11 +117,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 80px;
+    margin-right: 50px;
+
+    @include tablet {
+      margin-right: 60px;
+    }
 
     @include mobile {
       margin-right: 0;
     }
+  }
+
+  &__right-count__wrap {
+    margin-bottom: 15px;
   }
 
   &__right-count-t {
@@ -128,7 +140,6 @@
     line-height: 80%;
     text-align: center;
     color: $bc;
-    margin-bottom: 15px;
 
     @include tabletLarge {
       font-size: 80px;
@@ -170,10 +181,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 100px;
+    @include tablet {
+      margin-right: 0;
+    }
 
     @include mobile {
       margin-top: 40px;
     }
+  }
+
+  &__right-price__wrap {
+    margin-bottom: 15px;
   }
 
   &__right-price-t {
@@ -184,7 +203,6 @@
     line-height: 80%;
     text-align: center;
     color: $bc;
-    margin-bottom: 15px;
 
     @include tabletLarge {
       font-size: 80px;

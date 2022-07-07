@@ -26,7 +26,7 @@ form {
   border-bottom: 1px solid #D2D2D2;
   transition: all 0.3s;
   @include tabletLarge {
-    margin-top: 28px;
+    margin-top: 32px;
   }
 }
 
@@ -121,12 +121,12 @@ form {
   border: none;
   font-size: max(vh(16), 16px);
   @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px) {
-    font-size: vw(16);
-  }
-  @include to(1440px) {
     font-size: 20px;
   }
-  @include to(576px) {
+  @include tablet {
+    font-size: 15px;
+  }
+  @include mobile {
     font-size: 14px;
   }
 }
@@ -134,13 +134,14 @@ form {
 [data-animation='none'] .input-message {
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -10px;
   display: flex;
   width: 100%;
   min-height: 12px;
   font-size: max(vh(14), 14px);
   line-height: 100%;
   transform: translate(0%, 100%);
+  color: $mc2;
   @include to(1440px) {
     font-size: 12px;
   }
@@ -151,7 +152,8 @@ form {
 
 [data-field-input][data-status='field--inactive']:not(#r) {
   .input-message {
-    color: $bc;
+    color: transparent;
+    pointer-events: none;
   }
 }
 

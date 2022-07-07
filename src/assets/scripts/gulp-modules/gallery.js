@@ -14,7 +14,6 @@ function initSlider() {
     speed: 400,
     watchSlidesVisibility: true,
   });
-  console.log(swiper);
 }
 
 document.addEventListener('DOMContentLoaded', initSlider);

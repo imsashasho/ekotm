@@ -20,32 +20,84 @@ $mc: #1a2941;
 $bg: #fafafa;
 $light: #fcfcfc;
 $dark: #1a2941;
+
+$xs: 767px;
+$sm: 1366px;
+$md: 1920px;
+
+@mixin media($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include media($xs) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include media($sm) {
+    @content;
+  }
+}
+
+@mixin tabletLarge {
+  @include media($md) {
+    @content;
+  }
+}
+
+
+
+
+
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
   --header-h: 80px;
   --logo-w: 160px;
   --sliceFigure: 239px;
   --sliceFigure-big: 541px;
-}
 
-@media screen and (max-width: 1920) {
-  :root {
-    --header-h: 80px;
+  @include tabletLarge {
+    --header-h: 70px;
     --logo-w: 120px;
     --sliceFigure-big: 362px;
   }
-}
-@media screen and (max-width: 1366) {
-  :root {
+
+  @include tablet {
     --header-h: 90px;
     --logo-w: 90px;
     --sliceFigure-big: 44px;
+
   }
-}
-@media screen and (max-width: 768) {
-  :root {
+
+  @include mobile {
     --header-h: 60px;
     --sliceFigure: 100px;
     --sliceFigure-big: 100px;
   }
 }
+
+// @media screen and (max-width: 1920) {
+//   :root {
+//     --header-h: 70px;
+//     --logo-w: 120px;
+//     --sliceFigure-big: 362px;
+//   }
+// }
+// @media screen and (max-width: 1366) {
+//   :root {
+//     --header-h: 90px;
+//     --logo-w: 90px;
+//     --sliceFigure-big: 44px;
+//   }
+// }
+// @media screen and (max-width: 768) {
+//   :root {
+//     --header-h: 60px;
+//     --sliceFigure: 100px;
+//     --sliceFigure-big: 100px;
+//   }
+// }

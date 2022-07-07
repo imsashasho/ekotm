@@ -10,10 +10,31 @@
   }
 
   &__inner {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
+    overflow-x: scroll;
+    
+    &::-webkit-scrollbar {
+      width: 2px !important;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: rgba(0,0,0,0.1);
+      -webkit-box-shadow: inset 0 0 2px #e2e3e4;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 10px;
+      background: rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 0 2px #e2e3e4;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+      background: rgba(0,0,0,0.4);
+    }
+    &::-webkit-scrollbar-thumb:active{
+      background: $bTitle;
+    }
   }
 }
 
@@ -21,13 +42,21 @@
   position: relative;
   display: flex;
   align-items: top;
-  width: 100%;
+  width: fit-content;
   justify-content: space-between;
 
   &__inner {
     display: flex;
     flex-direction: column;
-    max-width: 14%;
+    width: 350px;
+    margin-right: 40px;
+    @include tabletLarge {
+      width: 260px;
+      margin-right: 30px;
+    }
+    &::last-child {
+      margin-right: 0;
+    }
   }
 
   &__mounth {
@@ -47,8 +76,21 @@
   &__circles-wrap {
     position: relative;
     margin-bottom: 40px;
+
     @include tabletLarge {
       margin-bottom: 35px;
+    }
+
+    &.active {
+      > .development-line__circle1 {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      > .development-line__circle2 {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+      > .development-line__circle3 {
+        background-color: rgba(255, 255, 255, 1);
+      }
     }
 
     &__circle-wrap:first-child {
@@ -135,26 +177,28 @@
 
   &__dashed-line1 {
     position: absolute;
-    width: 86%;
+    max-width: 100%;
     height: 0;
     top: 105px;
     left: 30px;
+    right: 365px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
     @include tabletLarge {
       left: 25px;
       top: 70px;
+      right: 265px;
     }
   }
 
   &__dashed-line2 {
     position: absolute;
-    width: 52%;
+    width: 15%;
     height: 0;
     top: 105px;
     left: 30px;
     border-bottom: 1px dashed $wc;
     @include tabletLarge {
-      width: 50%;
+      width: 15%;
       left: 25px;
       top: 70px;
     }
@@ -162,16 +206,21 @@
 
   &__animated-leaf {
     position: absolute;
-    transform: translateY(-75px);
-    left: 50%;
+    transform: translate(30%, -75px);
+    left: 15%;
     top: 128px;
     @include tabletLarge {
-      top: 93px;
+      transform: translate(50%, -75px);
+      top: 114px;
     }
   }
 
   &__animated-leaf svg {
     height: 54px;
     width: 42px;
+    @include tabletLarge {
+      height: 32px;
+      width: 25px;
+    }
   }
 }

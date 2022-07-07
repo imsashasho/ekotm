@@ -18,16 +18,23 @@
 //	@include wrapper();
 //}
 
-html {
-  font-size: 14px;
-}
-body {
+html, body {
   margin: 0;
-  min-width: 320px;
   line-height: 1.5em;
+  width: auto!important; 
+  overflow-x: hidden!important;
   font-family: $default-font;
-  overflow-x: hidden;
   font-size: 14px;
+  scroll-behavior: smooth;
+}
+ html {
+  height: -webkit-fill-available;
+ }
+
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
 }
 
 body input,

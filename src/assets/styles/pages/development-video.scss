@@ -21,7 +21,7 @@
     @include mobile {
       flex-direction: column;
       padding-top: 60px;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
       align-items: flex-start;
     }
   }
@@ -30,9 +30,10 @@
     font-family: $default-font;
     font-style: normal;
     font-weight: 500;
-    font-size: 72px;
+    font-size: 48px;
     line-height: 110%;
     color: $bc;
+    opacity: 0;
     @include tabletLarge {
       font-size: 36px;
     }
@@ -92,6 +93,15 @@
     display: block;
     transition: all 0.3s;
     position: relative;
+    overflow: hidden;
+    img {
+      transition: all ease-in-out 0.4s;
+    }
+    &:hover {
+      img {
+        transform: scale(1.02);
+      }
+    }
     
   }
 
@@ -104,7 +114,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include tablet {
+    text-transform: capitalize;
+    @include tabletLarge {
         padding: 14px 20px;
     }
   }
@@ -113,18 +124,19 @@
     font-size: 15px;
     font-weight: 500;
     transition: opacity 0.3s;
-    @include tablet {
+    @include tabletLarge {
         font-size: 12px;
     }
 
 }
 
 &-month__card-date {
+    font-family: $default-font;
     font-size: 12px;
     font-weight: 500;
     transition: opacity 0.3s;
     position: relative;
-    @include tablet {
+    @include tabletLarge {
         font-size: 10px;
     }
     &::before {
@@ -136,9 +148,9 @@
         background-size: contain;
         position: absolute;
         left: -22px;
-        bottom: 0;
-        transform: translateY(-50%);
-        @include tablet {
+        top: 0;
+        transform: translateY(50%);
+        @include tabletLarge {
             width: 10px;
             height: 10px;
         }
@@ -240,7 +252,7 @@
         display: flex;
         flex-direction: column;
         @include tablet {
-          transform: rotate(90deg);
+          transform: rotate(-90deg);
         }
       } 
     
@@ -263,6 +275,7 @@
       }
 
       &-prev {
+        margin-bottom: 20px;
         @include tablet {
           margin-bottom: 20px;
         }
@@ -311,7 +324,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-top: 50px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
     @include tablet {
       order: 4;
       width: 5%;
@@ -340,6 +353,8 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #283013;
+    padding: 0;
+    padding-left: 5px;
     @include tablet {
       font-size: 12px;
     }

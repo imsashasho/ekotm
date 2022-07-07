@@ -3,7 +3,7 @@
     grabCursor: true,
     loop: true,
     keyboard: true,
-    spaceBetween: 50,
+    spaceBetween: 10,
     initialSlide: 1,
     preloadImages: false,
     lazy: true,
@@ -16,6 +16,7 @@
         centeredSlides: true,
       },
       768: {
+        spaceBetween: 50,
         initialSlide: 1,
         autoHeight: true,
         slidesPerView: 2,

@@ -1,12 +1,21 @@
+import { locoScroll } from './customScroll';
+import { contactPopup } from './contactPopup';
+
 const footerUpRef = document.querySelector('.footer-up');
-var rootElement = document.documentElement;
 
 function scrollToTop(e) {
   // Scroll to top logic
   e.preventDefault();
-  rootElement.scrollTo({
-    top: 0,
+  window.scrollTo({
     behavior: 'smooth',
+    top: 0,
   });
 }
+
 footerUpRef.addEventListener('click', scrollToTop);
+
+const footerOpenPopupRef = document.querySelector('.footer-btn');
+
+footerOpenPopupRef.addEventListener('click', () => {
+  contactPopup.open();
+});

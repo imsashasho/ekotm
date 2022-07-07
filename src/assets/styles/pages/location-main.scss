@@ -2,6 +2,13 @@
   background-image: url(../images/location-bg.png);
   background-size: cover;
   height: 100vh;
+  @include mobile {
+    background-image: url(../images/location-main-mob.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 83vh;
+
+  }
 
   &__inner {
     position: relative;
@@ -19,6 +26,7 @@
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
     @include tablet {
       flex-direction: column-reverse;
     }
@@ -32,7 +40,7 @@
     background-size: cover;
     width: 35%;
       @include tabletLarge {
-        width: 28%;
+        width: 33%;
         padding: 71px 110px 71px 54px;
       }
       @include tablet {
@@ -45,12 +53,14 @@
   }
 
   &__left-header {
+    opacity: 0;
     font-family: $default-font;
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
     line-height: 110%;
     color: $wc;
+    margin-bottom: 20px;
     @include tabletLarge {
       font-size: 36px;
       margin-bottom: 15px;
@@ -66,6 +76,7 @@
   }
 
   &__left-descr {
+    opacity: 0;
     font-family: Gilroy;
     font-style: normal;
     font-weight: normal;
@@ -91,7 +102,7 @@
     padding-right: 110px;
     position: relative;
     @include tabletLarge {
-      width: 67%;
+      width: 65%;
       padding-right: 50px;
     }
     @include tablet {
@@ -104,7 +115,7 @@
 .progress-line {
   &__container {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     width: 100%;
     justify-content: space-between;
     position: relative;
@@ -122,14 +133,17 @@
         left: 25px;
         right: 100px;
         height: 1px;
-        border-bottom: 2px dashed $wc;
+        border-bottom: 1px dashed $wc;
+        @include tabletLarge {
+          top: 98px;
+        }
         @include tablet {
           top: 53%;
           left: 65px;
           right: 130px;
         }
         @include mobile {
-          top: 59%;
+          top: 59.5%;
           left: 32px;
           width: 80%;
         }
@@ -215,6 +229,17 @@
     }
     @include mobile {
       margin-bottom: 20px;
+    }
+    &.active {
+      > .progress-line__circle1 {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      > .progress-line__circle2 {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+      > .progress-line__circle3 {
+        background-color: rgba(255, 255, 255, 1);
+      }
     }
   }
 
@@ -309,14 +334,63 @@
     }
   }
 }
+.line {
+  position: absolute;
+  top: 116px;
+  left: 200px;
+  right: 15px;
+  @include tabletLarge {
+    top: 96px;
+    left: 100px;
+    right: 100px;
+  }
+  @include tablet {
+    top: 130px;
+    right: 175px;
+    left: 15px;
+  }
+  @include mobile {
+    top: 97px;
+    right: 100px;
+    left: 15px;
+  }
+}
 
 .animated-car {
-  position: absolute;
-  top: 54%;
+  position: relative;
+  width: 0;
+  transition: width 0.1s;
   transform: translateY(-50%);
   z-index: 5;
+  @include tabletLarge {
+    left: 95px;
+    right: 200px;
+  }
+  @include tablet {
+    right: 100px;
+    left: 165px;
+  }
   @include mobile {
-    width: 30%;
+    right: 82px;
+    left: 82px;
+
+  }
+  picture {
+    height: 90px;
+    width: 211px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @include tablet {
+      width: 140px;
+      height: 60px;
+    }
+    @include mobile {
+      height: 40px;
+      width: 86px;
+    }
   }
 
 }

@@ -1,14 +1,14 @@
-section.development-video-main 
+section#development-video.development-video-main 
   .development-video-main__inner.container 
     .development-video-top 
       h3.development-video-title Хід будівництва
       .standard-btn.development-video-btn
           a(href="#").btn-link.development-video-link більше звітів
-          .btn-svg
-            .btn-arrow
-              +svg('arrow')
-            .btn-circle
-              +svg('circle')
+            .btn-svg
+              .btn-arrow
+                +svg('animated-arrow')
+              .btn-circle
+                +svg('animated-circle')
     .development-video-wrap(data-settings=`[
         {
             "cameras": ["https://www.youtube.com/embed/JlMSABAtsAE", "https://www.youtube.com/embed/mif5r1CEbSw", "https://www.youtube.com/embed/kXrPIiyoEiY"]
@@ -58,12 +58,10 @@ section.development-video-main
                   span.development-video-month__card-title Жовтень 
                   span.development-video-month__card-date 10.01.2022
       .development-video-container
-        .poster-image 
-          img(src="assets/images/development-video3.png", alt="")
-        iframe.development-video(src="" preload="none" autoplay="false" muted="" loop="" playsinline="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen) 
+        iframe.development-video(src="https://www.youtube.com/embed/JlMSABAtsAE" preload="none" autoplay="false" muted="" loop="" playsinline="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen) 
       .camera-actions
-        button.camera-btn(data-index="0") Камера 1
-        button.camera-btn(data-index="1") Камера 2
-        button.camera-btn(data-index="2") Камера 3
+        button.camera-btn.active-camera(data-src="https://www.youtube.com/embed/JlMSABAtsAE") Камера 1
+        button.camera-btn(data-src="https://www.youtube.com/embed/mif5r1CEbSw") Камера 2
+        button.camera-btn(data-src="https://www.youtube.com/embed/kXrPIiyoEiY") Камера 3
         
       

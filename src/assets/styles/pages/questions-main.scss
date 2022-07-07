@@ -7,6 +7,7 @@
     display: flex;
     justify-content: flex-start;
     position: relative;
+    overflow: hidden;
     @include tablet {
       flex-direction: column;
     }
@@ -36,7 +37,7 @@
     border-radius: 50%;
     transition: background-color 0.3s ease-in-out;
     margin-top: 30px;
-    @include tablet {
+    @include tabletLarge {
       height: 40px;
       width: 40px;
       margin-top: 20px;
@@ -52,8 +53,8 @@
       background: linear-gradient(135deg, #7151d8 0%, #e95962 100%);
     }
     svg {
-      height: 40%;
-      width: 40%;
+      height: 30%;
+      width: 30%;
       stroke: $wc;
       fill: $wc;
       transition: stroke 0.3s ease-in-out;
@@ -116,9 +117,12 @@
   &-bottom {
     position: absolute;
     bottom: 0;
-    left: 30%;
+    left: 40%;
     max-width: 691px;
     z-index: 1;
+    @include tabletLarge {
+      max-width: 600px;
+    }
     @include tablet {
       display: none;
     }
@@ -166,6 +170,7 @@
     font-size: 30px;
     line-height: 120%;
     color: $bTitle;
+    opacity: 0;
     @include tabletLarge {
       font-size: 24px;
     }
@@ -198,7 +203,7 @@ label.checkbox {
   $transition: 0.2s all ease-in-out;
   position: relative;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 50px;
   @include tabletLarge {
     margin-bottom: 40px;
@@ -234,7 +239,10 @@ label.checkbox {
   }
 
   input[type='checkbox'] {
-    @include appearNone;
+    -webkit-appearance: none !important;
+    -moz-appearance: none;
+    appearance: none;
+    visibility: hidden;
     &:checked {
       + .checkbox-icon {
         border-color: #8cb90c;

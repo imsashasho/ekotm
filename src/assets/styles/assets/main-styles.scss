@@ -2,10 +2,6 @@
   padding: 0 110px;
   margin: 0 auto;
 
-  @include desktop {
-    padding: 0 80px;
-  }
-
   @include tabletLarge {
     padding: 0 50px;
   }

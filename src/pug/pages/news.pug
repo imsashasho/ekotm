@@ -22,7 +22,6 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
-  script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/news.js')
 block header
   include ../includes/header.pug
@@ -32,9 +31,15 @@ block content
       include ../includes/breadcrumbs.pug
       h1.news-title Новини та акції
       .news-filters 
-        span.news-filter(data-filter='all') Всі
-        span.news-filter(data-filter='news') Новини
-        span.news-filter(data-filter='promo') Акції
+        button.news-filter(data-filter='all') 
+          span Всі
+          span.news-filters-sup 0
+        button.news-filter(data-filter='news') 
+          span Новини
+          span.news-filters-sup 0
+        button.news-filter(data-filter='promo') 
+          span Акції
+          span.news-filters-sup 0
     .news-right
       .news-right__large
         .news-item(data-filter="news")
@@ -78,6 +83,8 @@ block content
                 span.news-item-title 10% знижки на будинки з ...
                 span.news-item-date 10.01.2022
 
-        
+block modal 
+  include ../includes/questions-popup.pug
+  include ../includes/form-popup.pug        
 block footer
   include ../includes/footer.pug

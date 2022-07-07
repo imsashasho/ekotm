@@ -1,7 +1,6 @@
 $xs: 767px;
 $sm: 1366px;
 $md: 1920px;
-$lg: 1440px;
 
 @mixin media($size) {
   @media (max-width: $size) {
@@ -27,8 +26,5 @@ $lg: 1440px;
   }
 }
 
-@mixin desktop {
-  @include media($lg) {
-    @content;
-  }
-}
+
+

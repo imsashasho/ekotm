@@ -34,6 +34,7 @@
     line-height: 110%;
     color: $bc;
     width: 50%;
+    opacity: 0;
     @include tabletLarge {
       font-size: 36px;
     }
@@ -62,6 +63,7 @@
     line-height: 140%;
     color: $grey;
     z-index: 5;
+    opacity: 0;
     @include tabletLarge {
       font-size: 15px;
     }
@@ -79,9 +81,22 @@
   height: 500px;
   padding: 40px 50px;
   background-image: url(../images/pattern-white.png);
+  overflow: hidden;
+  
+
   @include tabletLarge {
     height: 343px;
     padding: 20px 30px;
+  }
+  img {
+    transition: all ease-in-out 0.5s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.03);
+    }
+    
   }
 
   &-img {
@@ -200,7 +215,7 @@
     bottom: 0;
     right: 0;
     @include tabletLarge {
-      max-width: 55%;
+      max-width: 45%;
     }
   }
 }
@@ -213,6 +228,9 @@
   & .details-card-img {
     bottom: 0;
     right: 0;
+    @include tabletLarge {
+      max-width: 80%;
+    }
   }
 }
 

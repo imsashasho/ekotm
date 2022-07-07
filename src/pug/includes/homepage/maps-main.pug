@@ -1,27 +1,31 @@
 .map-main 
     .map-wrapper
-        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40833.40465241701!2d30.53710598893166!3d50.23426478806669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4beeff6ddeee5%3A0x34ea6d2613a35f5e!2sRomankiv%2C%20Kyiv%20Oblast%2C%2008710!5e0!3m2!1sen!2sua!4v1653563321770!5m2!1sen!2sua", allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0") 
+        #map.map 
     .map-navigation
         h3.map-navigation__header Інфраструктура
-        ul.map-navigation__main
-            li.map-navigation__item
-                .map-navigation__button.js-button-map-navigation
-                    +svg ('school')
-                    span Школи
-            li.map-navigation__item
-                .map-navigation__button.js-button-map-navigation
-                    +svg ('kindergarden')
-                    span Дитячий садок
-            li.map-navigation__item
-                .map-navigation__button.js-button-map-navigation
-                    +svg ('pharmacy')
-                    span Медицина
-            li.map-navigation__item
-                .map-navigation__button.js-button-map-navigation
-                    +svg ('bench')
-                    span Місця для відпочинку
-            li.map-navigation__item
-                .map-navigation__button.js-button-map-navigation
-                    +svg ('dinning')
-                    span Кафе/ресторани
-          
+        .map-navigation__wrap
+            .map-navigation__main
+                //- .map-navigation__item
+                //-     button.map-navigation__button.js-button-map-navigation(data-type="school")
+                //-         +svg ('school')
+                //-         span Школи
+                //- .map-navigation__item
+                //-     button.map-navigation__button.js-button-map-navigation(data-type="kindergarden")
+                //-         +svg ('kindergarden')
+                //-         span Дитячий садок
+                //- .map-navigation__item
+                //-     button.map-navigation__button.js-button-map-navigation(data-type="hospitals")
+                //-         +svg ('pharmacy')
+                //-         span Медицина
+                //- .map-navigation__item
+                //-     button.map-navigation__button.js-button-map-navigation(data-type="recreation")
+                //-         +svg ('bench')
+                //-         span Місця для відпочинку
+                //- .map-navigation__item
+                //-     button.map-navigation__button.js-button-map-navigation(data-type="dinning")
+                //-         +svg ('dinning')
+                //-         span Кафе/ресторани
+            .map-navigation__markers-wrap
+                .map-navigation__markers
+
+            

@@ -4,6 +4,19 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    .btn-arrow svg {
+      fill: $wc;
+      stroke: $wc;
+    }
+    .btn-arrow::before {
+      background-color: $wc;
+      transition: width ease-in 0.1s;
+    }
+
+    .btn-circle svg {
+      stroke: $wc;
+    }
   }
 
   &-top {
@@ -30,9 +43,10 @@
     font-family: $default-font;
     font-style: normal;
     font-weight: 500;
-    font-size: 72px;
+    font-size: 48px;
     line-height: 110%;
     color: $wc;
+    opacity: 0;
     @include tabletLarge {
       font-size: 36px;
     }
@@ -40,6 +54,13 @@
       font-size: 24px;
       margin-bottom: 20px;
     }
+  }
+
+  &-btn {
+    svg {
+      fill: $wc;
+    }
+
   }
 
   &-list {
@@ -68,7 +89,8 @@
 
   &-card {
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     width: 75%;
     padding: 45px;
     margin-top: 50px;
@@ -244,4 +266,6 @@
     }
   }
 }
+
+
 

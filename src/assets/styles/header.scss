@@ -5,14 +5,9 @@
   height: var(--header-h);
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 100;
-  @include desktop {
-    padding: 0 50px;
-  }
-  @include tabletLarge {
-    padding: 0;
-  }
 
   &-inner {
     max-width: 100%;
@@ -34,12 +29,34 @@
     
   }
 
+  &__link {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: fit-content;
+    @include tabletLarge {
+      height: 38px;
+    }
+    @include tablet {
+      height: 50px;
+    }
+    @include mobile {
+      height: 31px;
+    }
+  }
+
   &-logo__svg {
     height: 50px;
     width: 134px;
     margin-right: 158px;
+    @include tabletLarge {
+      height: 38px;
+      width: 103px;
+    }
     @include tablet {
       margin-right: 80px;
+      height: 50px;
     }
     @include mobile {
       height: 31px;
@@ -54,6 +71,7 @@
       display: flex;
       justify-content: flex-end;
       margin-right: 10px;
+      width: 100%;
     }
   }
 
@@ -77,13 +95,17 @@
     text-transform: uppercase;
     color: $wc;
     margin-right: 40px;
+    transition: color ease-in-out 0.3s;
+
     @include tablet {
       align-self: center;
     }
     @include mobile {
       font-size: 12px;
       margin-right: 10px;
-      width: 35%;
+    }
+    &:hover {
+      color: $mc2;
     }
   }
 
@@ -102,9 +124,25 @@
       align-items: center
     }
     @include mobile {
+      width: 45px;
+      height: 45px;
+    }
+    @media screen and (max-width: 365px) {
       width: 40px;
       height: 40px;
     }
+    transition: all ease-in-out 0.3s;
+      &:hover svg{
+        fill: $mc2;
+        @include tablet {
+          fill: $wc;
+        }
+      }
+      &:hover {
+        @include tablet {
+          border: 1px solid $mc2;
+        }
+      }
   }
   &__call {
     @include tablet {
@@ -115,12 +153,25 @@
       border-radius: 50%;
       display: flex;
       justify-content: center;
-      align-items: center
+      align-items: center;
+      transition: all ease-in-out 0.3s;
     }
+    
     @include mobile {
-      margin-right: 10px;   
+      margin-right: 10px;
+      width: 45px;
+      height: 45px;
+    }
+
+    @media screen and (max-width: 365px) {
       width: 40px;
       height: 40px;
+    }
+
+    &:hover {
+      @include tablet {
+        border: 1px solid $mc2;
+      }
     }
   }
 }
@@ -130,6 +181,7 @@
   height: 18px;
   vertical-align: middle;
   fill: $wc;
+  transition: all ease-in-out 0.3s;
   @include mobile {
     width: 16px;
     height: 13px;
@@ -149,6 +201,7 @@
 .call {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-left: 1px solid $wc;
   border-right: 1px solid $wc;
   padding-left: 40px;
@@ -157,8 +210,10 @@
   @include tablet {
     display: none;
   }
+  
 
   &__phone{
+    position: relative;
     text-decoration: none;
     font-family: $default-font;
     font-style: normal;
@@ -168,13 +223,39 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $wc;
+    transition: all ease-in-out 0.4s;
+    &::after {
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      content: '';
+      width: 0;
+      height: 1px;
+      background-color: $mc2;
+      opacity: 0;
+      transition: all ease-in-out 0.4s;
+    }
+    &:hover {
+      color: $mc2;   
+      
+      &::after {
+        width: 76px;
+        opacity: 1;
+      }
+    }
+    &.hide {
+      display: none;
+    }
+  }
+  &__num {
+    position: relative;
+    padding-right: 10px;
+    margin-right: -10px;
+    width: 160px;
   }
 
   &__phone-hidden {
     display: none;
-  }
-
-  &__phone-hidden.show {
     text-decoration: none;
     font-family: $default-font;
     font-style: normal;
@@ -184,6 +265,11 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $wc;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &__phone-hidden.on {
+    display: block;
   }
 
   &-tablet {
@@ -214,11 +300,15 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $wc;
-    @include desktop {
+    transition: color ease-in-out 0.3s;
+    @include tabletLarge {
       font-size: 14px;
     }
     @include to(992px) {
       font-size: 15px;
+    }
+    &:hover {
+      color: $mc2;
     }
 }
 
@@ -235,11 +325,38 @@
   width: 100%;
   height: fit-content;
   @include mobile {
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
     background-color: $wc;
   }
+
+  @media screen and (max-width: 365px) {
+      width: 40px;
+      height: 40px;
+  }
+  &:hover .toggle-menu__title {
+    color: $mc2;
+  }
+  &:hover span {
+    background-color: $mc2;
+    // @include tablet {
+    //   background-color: $bc2;
+    // }
+  }
+  &:hover span::after {
+    background-color: $mc2;
+    // @include tablet {
+    //   background-color: $bc2;
+    // }
+  }
+  &:hover span::before {
+    background-color: $mc2;
+    // @include tablet {
+    //   background-color: $bc2;
+    // }
+  }
+  
 }
 
 .toggle-menu__title,
@@ -253,6 +370,7 @@
   text-transform: uppercase;
   color: $wc;
   margin-left: 42px;
+  transition: all ease-in-out 0.3s;
   @include mobile {
     display: none;
   }
@@ -305,7 +423,7 @@
   top: 50%;
   transform: translateY(-50%);
   @include mobile {
-    background-color: transparent;
+    background-color: $bc2;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -330,20 +448,53 @@
   transition: all .5s;
 }
 
+#toggle-menu.on:hover {
+  & span::after {
+    background-color: $mc2;
+    @include tablet {
+      background-color: $bc2;
+    }
+  }
+  & span::before {
+    background-color: $mc2;
+    @include tablet {
+      background-color: $bc2;
+    }
+
+  }
+  & .toggle-menu__title--hidden {
+    color: $mc2;
+    @include tablet {
+      background-color: $bc2;
+    }
+  }
+}
+
 #toggle-menu.on span {
   background-color: transparent;
 }
 #toggle-menu.on span:before {
   transform: rotate(45deg) translate(5px, 5px);
+  transition: all ease-in-out 0.3s;
   @include mobile {
     transform: rotate(45deg) translate(2px, 2px);
+  }
+  &:hover {
+    background-color: $mc2;
+    @include tablet {
+      background-color: $bc2;
+    }
   }
   
 }
 #toggle-menu.on span:after {
-  transform: rotate(-45deg) translate(7px, -8px);
+  transform: rotate(-45deg) translate(7.5px, -8px);
+  transition: all ease-in-out 0.3s;
   @include mobile {
     transform: rotate(-45deg) translate(2px, -2px);
+  }
+  &:hover {
+    background-color: $mc2;
   }
 }
 #toggle-menu.on + #menu {
@@ -365,11 +516,16 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity .4s;
+  @include tabletLarge {
+    top: 70px;
+  }
   @include tablet {
     height: 330px;
+    top: 90px;
   }
   @include mobile {
     height: 511px;
+    top: 60px;
   }
 } 
 .menu-item, 
@@ -386,7 +542,15 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: $wc;
-
+  transition: all ease-in-out 0.3s;
+}
+.menu-link:hover,
+.menu-link:focus {
+  color: $mc2;
+}
+.menu-item:last-child {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .menu {
@@ -492,9 +656,24 @@
       line-height: 120%;
       text-transform: uppercase;
       color: $wc;
-      padding: 16px 6px;
-      border: 1px solid $wc;
+      padding: 15px 6px;
+      border: 1px solid transparent;
       border-radius: 50px;
+      @include tabletLarge {
+        padding: 12px 6px;
+        font-size: 10px;
+      }
+      @include tablet {
+        font-size: 12px;
+        padding: 15px 6px;
+      }
+      @include mobile {
+        font-size: 10px;
+        padding: 12px 6px;
+      }
+      &.active {
+        border: 1px solid $wc;
+      }
     }
 
     
@@ -502,8 +681,4 @@
 
 }
 
-.menu-link:hover,
-.menu-link:focus {
-  color: #fff;
-}
 

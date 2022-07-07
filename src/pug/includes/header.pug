@@ -1,13 +1,13 @@
 header.header
     .header-inner.container
         .header__left
-            a(href='logo').header__link
+            a(href='index.html').header__link
                 +svg('logo').header-logo__svg
             .header-mobile
-                a(href='apartment').header-apartment__link.header-apartment__link--mob Обрати квартиру 
-                a(href='camera').header__call
+                a(href='apartment').header-apartment__link.header-apartment__link--mob Обрати <br> квартиру 
+                a().header__call(data-open-call)
                     +svg('call').call__svg
-                a(href='camera').header__cam.header__cam--mob
+                a(href='#development-video').header__cam.header__cam--mob
                     +svg('cam').cam__svg
             .header-burger__group
                 a(href="#menu")#toggle-menu
@@ -26,19 +26,19 @@ header.header
                             .menu-line
                         ul.menu-list 
                             li.menu-item 
-                                a(href="#home").menu-link Головна
+                                a(href="index.html").menu-link Головна
                             li.menu-item
-                                a(href="#home").menu-link Розташування
+                                a(href="/#location").menu-link Розташування
                             li.menu-item
                                 a(href="#home").menu-link Інфраструктура
                             li.menu-item 
                                 a(href="#home").menu-link Обрати квартиру
                             li.menu-item
-                                a(href="#home").menu-link Переваги
+                                a(href="/#details-main").menu-link Переваги
                             li.menu-item 
                                 a(href="construction.html").menu-link Хід будівництва
                             li.menu-item 
-                                a(href="#home").menu-link Умови придбання
+                                a(href="/#conditions").menu-link Умови придбання
                             li.menu-item
                                 a(href="news.html").menu-link Новини та акції
                             li.menu-item
@@ -57,14 +57,14 @@ header.header
             a(href='apartment').header-apartment__link Обрати квартиру
             .call
                 .call__num
-                    a(href='tel:0442992203').call__phone.active +38(095)показать
-                    a(href='tel:0442992203').call__phone-hidden.show + 38 (095) 555 55 55
+                    a(href='tel:0442992203').call__phone +38(095)показати
+                    a(href='tel:0442992203').call__phone-hidden + 38 (095) 555 55 55
                 .request
                     a(href='#').request__link.js-form-open Замовити дзвінок   
-            .call-tablet 
-                a(href='camera').header__call
+            .call-tablet
+                a().header__call(data-open-call-tab)
                     +svg('call').call__svg
 
-            a(href='camera').cam.header__cam
+            a(href='#development-video').cam.header__cam
                 +svg('cam').cam__svg
             

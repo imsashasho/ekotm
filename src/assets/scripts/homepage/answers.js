@@ -1,6 +1,5 @@
 {
   const swiper = new Swiper('.answers-slider', {
-    grabCursor: true,
     loop: false,
     autoHeight: true,
     centeredSlides: true,
@@ -23,7 +22,7 @@
       },
     },
 
-    simulateTouch: true,
+    // simulateTouch: true,
     navigation: {
       nextEl: '.answers-slider-next',
       prevEl: '.answers-slider-prev',

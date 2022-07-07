@@ -1,4 +1,4 @@
-section.answers-main 
+section.answers-main#answers 
   .answers-main-left
     h3.answers-title Відповіді на найбільш поширені запитання
     .answers-slider
@@ -25,11 +25,11 @@ section.answers-main
               +svg('swiper-down').icon.icon-arrow-right
     .standard-btn.answers-btn
       a(href="documents.html").btn-link.answers-link Документи
-      .btn-svg
-        .btn-arrow
-          +svg('arrow')
-        .btn-circle
-          +svg('circle')
+        .btn-svg
+          .btn-arrow
+            +svg('animated-arrow')
+          .btn-circle
+            +svg('animated-circle')
   .answers-main-right
     img(src="assets/images/answers-bg.png", alt="")
   .answers-decoration 

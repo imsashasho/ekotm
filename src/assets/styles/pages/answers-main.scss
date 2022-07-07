@@ -38,7 +38,8 @@
         }
         @include mobile {
             width: 100%;
-            padding: 60px 20px;
+            padding: 60px 20px 100px 20px;
+            height: 100%;
             &::after {
                 display: none;
             }
@@ -53,6 +54,7 @@
         line-height: 110%;
         color: $bTitle;
         margin-bottom: 40px;
+        opacity: 0;
         @include tabletLarge {
             font-size: 36px;
             width: 65%;
@@ -68,15 +70,20 @@
         display: flex;
         align-items: center;
         overflow: hidden;
-        max-height: 340px;
+        height: 340px;
         @include tabletLarge {
             width: 75%;
-            max-height: 218px;
+            height: 218px;
         }
         @include mobile {
             position: relative;
             overflow: initial;
             width: 100%;
+            height: auto;
+        }
+        .swiper-wrapper {
+            pointer-events: none;
+            cursor: default;
         }
 
     }
@@ -89,6 +96,14 @@
             left: 50%;
             transform: translateX(-50%);
         }
+    }
+
+    &-slider-next {
+        margin-top: 20px;
+        @include mobile {
+            margin-top: 0;
+        }
+
     }
 
     &-slider__item {
@@ -124,6 +139,9 @@
         @include tabletLarge {
             font-size: 15px;
         }
+        @include mobile {
+            width: 85%;
+        }
     }
 
     &-slider__arrows {
@@ -153,6 +171,7 @@
 
     &-btn {
         margin-top: 40px;
+        display: none !important;
         @include tabletLarge {
             margin-top: 30px;
         }
@@ -166,6 +185,7 @@
 
     &-main-right {
         width: 50%;
+        overflow: hidden;
         @include tablet {
             width: 100%;
         }

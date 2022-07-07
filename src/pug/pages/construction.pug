@@ -18,12 +18,14 @@ block meta
 block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
+  script.
+
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
-  script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/construction.js')
+  script(defer src='./assets/scripts/construction.bundle.js')
+
 block header
   include ../includes/header.pug
 block content
@@ -33,87 +35,92 @@ block content
       h1.construction-title Хід будівництва
       .construction-list 
         .construction-year
-          .construction-year__item
-            .construction-year__hint 
+          .construction-year__item(data-year="2022")
+            .construction-year__hint
               img(src="assets/images/green-leaf-small.svg", alt="")
             span 2022
-          .construction-year__item
+          .construction-year__item(data-year="2021")
             .construction-year__hint 
               img(src="assets/images/green-leaf-small.svg", alt="")
-            span 2021 
+            span 2021  
+        select(name="month").construction-select.construction-year-mobile
+          option(value="2022") 2022    
         .construction-month
-          .construction-month__item 
+          .construction-month__item(data-month="01")
             span Січень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="02") 
             span Лютий
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="03")
             span Березень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="04") 
             span Квітень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="05") 
             span Травень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="06") 
             span Червень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="07") 
             span Липень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="08") 
             span Серпень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="09") 
             span Вересень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="10") 
             span Жовтень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="11") 
             span Листопад
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
-          .construction-month__item 
+          .construction-month__item(data-month="12") 
             span Грудень
             .construction-month__left-hint
               img(src="assets/images/white-leaf-small.svg", alt="")
             .construction-month__right-hint
               p Виконується монтаж ліфтів. Триває чітке влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики.            
+        select(name="month").construction-select.construction-month-mobile
+          option(value="january") Січень
+      .construction-description-mobile
     .construction-right
       .construction-right__inner 
         .construction-month__card-wrap
@@ -158,6 +165,11 @@ block content
               .construction-month__card-text
                 span.construction-month__card-title Липень 
                 span.construction-month__card-date 10.01.2022
+block modal 
+  include ../includes/questions-popup.pug
+  include ../includes/form-popup.pug
+  include ../includes/construction-gallery.pug
+  include ../includes/form-popup-call.pug
 
 block footer
   include ../includes/footer.pug

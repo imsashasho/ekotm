@@ -7,8 +7,12 @@ block variable
     var class_page = 'class-page-news-single-page'
     var breadcrumbsSubitem = [
       {
-        label: 'About',
-        link: pagesLink[0].about
+        label: 'Новини та акції',
+        link: pagesLink[0].news
+      },
+      {
+        label: 'Чорна п’ятниця! Реальні знижки до 60 000 грн',
+        link: pagesLink[0].single-news
       }
     ]
   
@@ -22,7 +26,6 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
-  script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/news-single-page.js')
 block header
   include ../includes/header.pug
@@ -39,10 +42,13 @@ block content
           a(href="#").btn-link.news-btn-link Обрати будинок
           .btn-svg
             .btn-arrow
-              +svg ('arrow-white')
+              +svg ('animated-arrow')
             .btn-circle
-              +svg ('circle-white')
+              +svg ('animated-circle')
     .single-news-right 
       img(src="assets/images/single-news.png", alt="")
+block modal 
+  include ../includes/questions-popup.pug
+  include ../includes/form-popup.pug
 block footer
   include ../includes/footer.pug

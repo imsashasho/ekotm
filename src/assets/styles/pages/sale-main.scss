@@ -1,5 +1,6 @@
 .sale-main {
   display: flex;
+  
 
   &__list {
     display: flex;
@@ -39,8 +40,9 @@
     width: 70%;
     height: 100%;
     padding: 68px 30px;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(35px);
+    background: rgba(24, 24, 24, 1);
+    // backdrop-filter: blur(20px);
+    // -webkit-backdrop-filter: blur(20px);
     @include tabletLarge {
       padding: 20px;      
     }
@@ -71,8 +73,7 @@
       margin-bottom: 15px;     
     }
     @include mobile {
-      font-size: 15px; 
-      margin-bottom: 30px;   
+      font-size: 15px;  
     }
   }
 
@@ -97,16 +98,30 @@
 
   &__btn {
     margin-top: 50px;
+
     @include tabletLarge {
       margin-top: 30px;
     }
+
     @include tablet {
-      margin-top: 15px;
-      
+      margin-top: 15px; 
     }
+
     @include mobile {
-      margin-top: 30px;
-      
+      margin-top: 10px;
+    }
+
+    .btn-arrow svg {
+      fill: $wc;
+      stroke: $wc;
+    }
+    .btn-arrow::before {
+      background-color: $wc;
+      transition: width ease-in 0.3s;
+    }
+
+    .btn-circle svg {
+      stroke: $wc;
     }
   }
 }

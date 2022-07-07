@@ -4,24 +4,24 @@ footer.footer
     .footer-top__inner.container 
       .footer-top-left 
         .footer-request 
-          spam.footer-number + 38 096 273 23 18
+          a(href="tel:+380962732318").footer-number + 38 096 273 23 18
           .standard-btn.footer-btn
             a(href="#" data-btn-submit-text).btn-link замовити дзвінок
-            .btn-svg
-              .btn-arrow
-                +svg ('arrow')
-              .btn-circle
-                +svg ('circle')
+              .btn-svg
+                .btn-arrow
+                  +svg ('animated-arrow')
+                .btn-circle
+                  +svg ('animated-circle')
       .footer-top-right
         .footer-location 
           p.footer-address м. Київ, Київська обл, <br> пгт. Романків, 21
           .standard-btn.footer-btn
             a(href="#" data-btn-submit-text).btn-link google maps
-            .btn-svg
-              .btn-arrow
-                +svg ('arrow')
-              .btn-circle
-                +svg ('circle')
+              .btn-svg
+                .btn-arrow
+                  +svg ('animated-arrow')
+                .btn-circle
+                  +svg ('animated-circle')
   .footer-bottom
     .footer-bottom__inner.container
       .footer-bottom-block
@@ -32,10 +32,10 @@ footer.footer
             +svg('instagram')
         .footer-links 
           a(href="#") Обрати квартиру
-          a(href="#") Розташування
-          a(href="#") Хід будівництва
-          a(href="#") Переваги
-          a(href="#") Новини та акції
+          a(href="/#location") Розташування
+          a(href="/#development-video") Хід будівництва
+          a(href="/#details-main") Переваги
+          a(href="/#news-home") Новини та акції
         .footer-up 
           a(href="#") вгору
             +svg ('arrow-up')

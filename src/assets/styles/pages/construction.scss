@@ -1,6 +1,11 @@
 #id-page-construction .header {
+    background: rgba(24, 24, 24, 1);
+}
+
+#id-page-construction .header.bg-header{
     background: rgba(24, 24, 24, 0.5);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 #id-page-construction .header.on {
@@ -10,8 +15,11 @@
     display: flex;
     padding-top: var(--header-h);
     justify-content: space-between;
+    height: 100vh;
     @include tablet {
         flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
     }
     
 
@@ -21,15 +29,16 @@
         padding-left: 110px;
         padding-top: 100px;
         width: 35%; 
+        overflow-y: scroll;
         @include tabletLarge {
             width: 45%;
             padding: 50px;
         } 
         @include tablet {
             width: 100%;
+            overflow: visible;
         }
-        @include mobile {
-            
+        @include mobile {    
             padding: 30px 20px;
         }         
     }
@@ -70,12 +79,38 @@
             justify-content: space-between;
             margin-top: 30px;
             padding: 20px;
-            height: 60px;
-            overflow: hidden;
+            height: 70px;
+            position: relative;
+        }
+    }
+
+    &-select {
+        display: none;
+        @include mobile {
+            display: block;
+            color: $wc;
+            background-color: $bTitle;
+            border: none;
+            -webkit-appearance: none;
+        }
+        option {
+            background-color: #444444;
+            color: $wc;
         }
     }
 
     &-year {
+        @include mobile {
+            display: none;
+            order: 2;
+            position: absolute;
+            height: 30px;
+            overflow: hidden;
+            right: 20px;
+        }
+    }
+
+    &-year-mobile {
         @include mobile {
             order: 2;
         }
@@ -84,6 +119,7 @@
     &-year__item {
         display: flex;
         margin-bottom: 20px;
+        cursor: pointer;
         span {
             font-style: normal;
             font-weight: 400;
@@ -93,6 +129,9 @@
             color: $greyBg;
         }
         &:hover .construction-year__hint {
+            opacity: 1;
+        }
+        &.active .construction-year__hint{
             opacity: 1;
         }
     }
@@ -108,7 +147,14 @@
     &-month {    
         margin-left: 58px;
         @include mobile {
+            display: none;
             margin-left: 0;
+            position: absolute;
+            height: 30px;
+            overflow: hidden;
+            left: 20px;
+            transition: all ease-in-out 0.5s;
+            background-color: #444444;
         }
     }
 
@@ -121,6 +167,22 @@
         @include tablet {
             margin-bottom: 20px;
         } 
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right: 10px solid #444444;
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all ease-in-out 0.3s;
+
+        }
+        
         
 
         span {
@@ -144,16 +206,37 @@
             margin-bottom: 0;
         }
 
+        &:hover {
+            &::before {
+                opacity: 1;   
+            }
+        }
+
+        &.active {
+            &::before {
+                opacity: 1;
+            }
+        }
+
         &:hover .construction-month__left-hint,
         &:hover .construction-month__right-hint
          {
             opacity: 1;
+            pointer-events: auto;
+         }
+
+        &.active .construction-month__left-hint,
+        &.active .construction-month__right-hint
+         {
+            opacity: 1;
+            pointer-events: auto;
          }
     }
 
     &-month__left-hint {
         position: absolute;
         opacity: 0;
+        pointer-events: none;
         display: block;
         height: 19px;
         width: 15px;
@@ -164,9 +247,21 @@
 
     }
 
+    &-description-mobile {
+        display: none;
+        @include mobile {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            position: relative;
+            margin-top: 15px;
+        }  
+    }
+
     &-month__right-hint {
         position: absolute;
         opacity: 0;
+        pointer-events: none;
         display: block;
         width: 267px;
         top: -57px;     
@@ -181,6 +276,27 @@
         @include tablet {
             top: -57px;
         } 
+        @include mobile {
+            transform: translateX(0px);
+            top: 0;
+            width: 100%;
+            position: relative;
+            height: 100%;
+            right: 0;
+            opacity: 1;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -98%);
+                width: 0; 
+                height: 0; 
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;    
+                border-bottom: 10px solid #444444;
+            }
+        }
         
 
         p {
@@ -202,23 +318,24 @@
 
         }
 
-        &::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border: 20px solid transparent;
-            border-right: 20px solid #444444;
-            position: absolute;
-            top: 50%;
-            left: -30px;
-            transform: translateY(-50%);
+        // &::before {
+        //     content: '';
+        //     width: 0;
+        //     height: 0;
+        //     border: 20px solid transparent;
+        //     border-right: 20px solid #444444;
+        //     position: absolute;
+        //     top: 50%;
+        //     left: -30px;
+        //     transform: translateY(-50%);
             
-        }
+        // }
     }
 
     &-right {
         width: 65%;
         background-color: $greyBg;
+        overflow-y: scroll;
         @include tablet {
             width: 100%;
         }
@@ -243,6 +360,15 @@
     &-month__card-wrap {
         width: 47.5%;
         margin-bottom: 50px;
+        overflow: hidden;
+        img {
+            transition: all ease-in-out 0.4s;
+          }
+        &:hover {
+            img {
+              transform: scale(1.02);
+            }
+        }
         @include tabletLarge {
             margin-bottom: 30px;
         }
@@ -271,9 +397,8 @@
     &-month__card {
         color: #fff;
         display: block;
-        transition: all 0.3s;
         position: relative;
-        
+        overflow: hidden;  
       }
 
     &-month__card-text {
@@ -294,6 +419,7 @@
         font-size: 15px;
         font-weight: 500;
         transition: opacity 0.3s;
+        text-transform: capitalize;
         @include tabletLarge {
             font-size: 12px;
         }
