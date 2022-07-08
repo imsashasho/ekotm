@@ -1,8 +1,8 @@
 const filters = document.querySelectorAll('.news-filter');
 let activeFilter = filters[0];
 
-filters.forEach(filter => {
-  filter.addEventListener('click', event => {
+filters.forEach((filter) => {
+  filter.addEventListener('click', (event) => {
     const selectedFilter = filter.getAttribute('data-filter');
     let itemsToHide = document.querySelectorAll(
       `.news-right .news-item:not([data-filter='${selectedFilter}'])`,
@@ -18,12 +18,12 @@ filters.forEach(filter => {
       itemsToShow = document.querySelectorAll('.news-right [data-filter]');
     }
 
-    itemsToHide.forEach(el => {
+    itemsToHide.forEach((el) => {
       el.classList.add('hide');
       el.classList.remove('show');
     });
 
-    itemsToShow.forEach(el => {
+    itemsToShow.forEach((el) => {
       el.classList.remove('hide');
       el.classList.add('show');
     });
@@ -47,10 +47,10 @@ async function newsRendering() {
   newsContainerRight.innerHTML = '';
   newsContainerLeft.innerHTML = '';
 
-  newsData.dataSmall.forEach(card => {
+  newsData.dataSmall.forEach((card) => {
     newsContainerRight.innerHTML += card;
   });
-  newsData.dataBig.forEach(card => {
+  newsData.dataBig.forEach((card) => {
     newsContainerLeft.innerHTML += card;
   });
   filterAll.innerHTML += `<span class="news-filters-sup">${newsData.count.all}</span>`;

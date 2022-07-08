@@ -80,25 +80,25 @@
     },
   };
   calculator.cost = 0;
-  costRef.addEventListener('input', event => {
+  costRef.addEventListener('input', (event) => {
     const { value } = event.target;
     calculator.cost = +value;
   });
-  minPaymentRangeRef.addEventListener('change', event => {
+  minPaymentRangeRef.addEventListener('change', (event) => {
     const { value } = event.target;
     calculator.minPayment = +value;
   });
-  minPaymentRef.addEventListener('change', event => {
+  minPaymentRef.addEventListener('change', (event) => {
     const { value } = event.target;
     calculator.minPayment = +value;
   });
 
-  paymentDurationRef.addEventListener('change', event => {
+  paymentDurationRef.addEventListener('change', (event) => {
     const { value } = event.target;
     calculator.paymentDuration = +value;
   });
 
-  paymentDurationRangeRef.addEventListener('change', event => {
+  paymentDurationRangeRef.addEventListener('change', (event) => {
     const { value } = event.target;
     calculator.paymentDuration = +value;
   });

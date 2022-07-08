@@ -76,7 +76,7 @@
   const developmentVideoActionsRef = document.querySelector('.camera-actions');
   let activeBtn = developmentVideoActionsRef.querySelector('.camera-btn');
 
-  const handleVideoChange = e => {
+  const handleVideoChange = (e) => {
     const { target } = e;
     const btn = target.closest('.camera-btn');
     if (btn) {

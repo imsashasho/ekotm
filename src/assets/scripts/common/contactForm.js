@@ -1,7 +1,7 @@
-import FormMonster from '../../../pug/components/form/form';
-import SexyInput from '../../../pug/components/input/input';
 import * as yup from 'yup';
 import i18next from 'i18next';
+import FormMonster from '../../../pug/components/form/form';
+import SexyInput from '../../../pug/components/input/input';
 import { successPopup } from './successPopup';
 
 // import * as yup from 'yup';

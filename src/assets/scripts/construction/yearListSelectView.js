@@ -1,8 +1,4 @@
-export const yearOptionsView = ({ year }) => {
-  return `
+export const yearOptionsView = ({ year }) => `
               <option value="${year}">${year}</option>
           `;
-};
-export const yearListSelectView = items => {
-  return items.map(item => yearOptionsView(item)).join('');
-};
+export const yearListSelectView = items => items.map(item => yearOptionsView(item)).join('');

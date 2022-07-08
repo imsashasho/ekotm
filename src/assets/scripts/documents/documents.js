@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 
 gsap.registerPlugin(ScrollTrigger);
-window.addEventListener('scroll', function(evt) {
+window.addEventListener('scroll', (evt) => {
   scrollFunction();
 });
 const header = document.querySelector('.header');

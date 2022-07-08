@@ -4,6 +4,4 @@ export const monthOptionsView = ({ name, value }) => {
             <option value="${selectValue}">${name}</option>
         `;
 };
-export const monthListSelectView = items => {
-  return [{ name: 'Місяць', value: '' }, ...items].map(item => monthOptionsView(item)).join('');
-};
+export const monthListSelectView = items => [{ name: 'Місяць', value: '' }, ...items].map(item => monthOptionsView(item)).join('');

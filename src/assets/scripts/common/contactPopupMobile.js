@@ -1,4 +1,4 @@
-import { popupFactory } from '../common/popupFactory';
+import { popupFactory } from './popupFactory';
 import { contactPopup } from './contactPopup';
 
 export const contactPopupMobile = popupFactory(document.querySelector('.form-header-call'));

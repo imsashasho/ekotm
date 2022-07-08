@@ -209,9 +209,21 @@
       }
     }
 
+    &-line {
+          width: 1px;
+          left: 0;
+          height: 100%;
+          background: #fff;
+          position: absolute;
+          @include mobile {
+            display: none;
+          }
+    }
+
     &-text {
       padding-left: 30px;
-      border-left: 1px solid $wc;
+      position: relative;
+      // border-left: 1px solid $wc;
       width: 50%;
       padding-right: 123px;
       @include tabletLarge {

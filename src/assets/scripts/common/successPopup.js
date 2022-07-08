@@ -1,4 +1,4 @@
-import { popupFactory } from '../common/popupFactory';
+import { popupFactory } from './popupFactory';
 
 export const successPopup = popupFactory(document.querySelector('.questions-modal'));
 

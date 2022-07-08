@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { loader } from '../modules/helpers/helpers';
+import { loader } from './helpers/helpers';
 
 // export default function fake3d(
 //   containerArg,
@@ -220,13 +220,13 @@ export default function fake3d(
   const array = [];
   const IMG_PATH = path;
 
-  let loadedCounter = 0;
-  /**Флаг блокировки при играющей анимации */
+  const loadedCounter = 0;
+  /** Флаг блокировки при играющей анимации */
   let isAnimating = false;
   window.currentDisplayedImage = 0;
   let currentDisplayedImage = 0;
 
-  /**если изображения не в JSON-t */
+  /** если изображения не в JSON-t */
   // for (let index = 1; index < imagesCount; index++) {
   //     const element = imagesCount[index];
   //     fetch(`${IMG_PATH}${index}.jpg`)
@@ -247,7 +247,7 @@ export default function fake3d(
 
   fetch(path)
     .then(el => el.json())
-    .then(el => {
+    .then((el) => {
       el.forEach(img => array.push(img));
       container.querySelector(':first-child').style.opacity = 0;
       container.style.background = 'none';
@@ -256,7 +256,7 @@ export default function fake3d(
   function changeImage(posInPercent, mouseenter = false) {
     if (isAnimating) return;
     if (mouseenter) {
-      /**Переход от прошлой точки до текущей при заходе в контейнер */
+      /** Переход от прошлой точки до текущей при заходе в контейнер */
       isAnimating = true;
       if (+currentDisplayedImage > +posInPercent) {
         const tlBig = gsap.timeline({ immediateRender: true });
@@ -288,9 +288,9 @@ export default function fake3d(
       return;
     }
     if (
-      currentDisplayedImage !== posInPercent &&
-      array[posInPercent] !== undefined &&
-      isAnimating === false
+      currentDisplayedImage !== posInPercent
+      && array[posInPercent] !== undefined
+      && isAnimating === false
     ) {
       containerToAdd.src = array[posInPercent];
       currentDisplayedImage = posInPercent;

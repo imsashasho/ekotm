@@ -1,6 +1,6 @@
-import { intersectionObserver } from '../common/intersectionObserver';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { intersectionObserver } from '../common/intersectionObserver';
 import { addIntersectionOnceWithCallback } from '../modules/helpers/helpers';
 import fake3d from '../modules/sequence';
 import { preloader } from '../common/loader';
@@ -51,12 +51,18 @@ gsap.registerPlugin(ScrollTrigger);
       overflow: 'initial',
       display: 'inline-block',
     });
-    let tl = gsap
+    const tl = gsap
       .timeline()
       .fromTo(
         elementRef.querySelectorAll('span>span'),
         { yPercent: 100 },
-        { yPercent: 0, stagger: 0.05, duration: 1, opacity: 1, ease: 'power4.out' },
+        {
+          yPercent: 0,
+          stagger: 0.05,
+          duration: 1,
+          opacity: 1,
+          ease: 'power4.out',
+        },
       )
       .add(() => {
         elementRef.innerHTML = elementRef.textContent;
@@ -73,9 +79,7 @@ gsap.registerPlugin(ScrollTrigger);
           textContent: 0,
         },
         {
-          textContent: (e, target) => {
-            return target.dataset.count;
-          },
+          textContent: (e, target) => target.dataset.count,
           duration: 3,
           ease: 'power1.out',
           snap: { textContent: isDigitInteger ? 1 : 0.1 },
@@ -139,12 +143,12 @@ gsap.registerPlugin(ScrollTrigger);
     const startClip = 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)';
     const endClip = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
     document.querySelectorAll(selector).forEach(text => {
-      let tl = gsap
+      const tl = gsap
         .timeline({
           // paused: true,
           scrollTrigger: {
             trigger: text,
-            scroller: scroller ? scroller : null,
+            scroller: scroller || null,
             once: true,
           },
         })
@@ -176,12 +180,12 @@ gsap.registerPlugin(ScrollTrigger);
     const startClip = 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)';
     const endClip = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
     document.querySelectorAll(selector).forEach(text => {
-      let tl = gsap
+      const tl = gsap
         .timeline({
           // paused: true,
           scrollTrigger: {
             trigger: text,
-            scroller: scroller ? scroller : null,
+            scroller: scroller || null,
             once: true,
           },
         })
@@ -215,7 +219,7 @@ gsap.registerPlugin(ScrollTrigger);
       end: 'bottom 10%',
       onEnter: batch => {
         batch.forEach((card, index) => {
-          let chart_tl = gsap.timeline();
+          const chart_tl = gsap.timeline();
           chart_tl.to(
             card,
             {
@@ -258,10 +262,10 @@ gsap.registerPlugin(ScrollTrigger);
       end: 'bottom 10%',
       onEnter: batch => {
         batch.forEach((card, index) => {
-          let img = card.querySelectorAll('.details-card-img');
-          let title = card.querySelectorAll('.details-card-title');
-          let descr = card.querySelectorAll('.details-card-description');
-          let chart_tl = gsap.timeline();
+          const img = card.querySelectorAll('.details-card-img');
+          const title = card.querySelectorAll('.details-card-title');
+          const descr = card.querySelectorAll('.details-card-description');
+          const chart_tl = gsap.timeline();
           chart_tl.to(
             card,
             {
@@ -315,11 +319,11 @@ gsap.registerPlugin(ScrollTrigger);
     });
   });
 
-  let revealContainers = document.querySelectorAll('.visual-main__right-bottom');
+  const revealContainers = document.querySelectorAll('.visual-main__right-bottom');
 
   revealContainers.forEach(container => {
-    let image = container.querySelector('.visual-main__photo-owner');
-    let tl = gsap.timeline({
+    const image = container.querySelector('.visual-main__photo-owner');
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
         toggleActions: 'restart none none reset',
@@ -333,6 +337,106 @@ gsap.registerPlugin(ScrollTrigger);
       delay: -1.1,
       ease: Power2.out,
       duration: 1.5,
+    });
+  });
+
+  gsap.set('.conditions-card', {
+    opacity: 0,
+    yPercent: 20,
+    scale: 0.9,
+  });
+  // gsap.set('.conditions-card-img', {
+  //   scaleY: 0,
+  //   transformOrigin: '0% 100%',
+  // });
+  gsap.set('.conditions-card-line', {
+    yPercent: -100,
+    opacity: 0,
+  });
+
+  gsap.set('.conditions-card__title', {
+    xPercent: 100,
+    opacity: 0,
+  });
+
+  gsap.set('.conditions-card__description', {
+    xPercent: 100,
+    opacity: 0,
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    ScrollTrigger.batch('.conditions-card', {
+      start: 'top 80%',
+      end: 'bottom 10%',
+      onEnter: batch => {
+        batch.forEach((card, index) => {
+          // const img = card.querySelectorAll('.conditions-card-img');
+          const line = card.querySelectorAll('.conditions-card-line');
+          const title = card.querySelectorAll('.conditions-card__title');
+          const descr = card.querySelectorAll('.conditions-card__description');
+          const chart_tl = gsap.timeline();
+          chart_tl.to(
+            card,
+            {
+              opacity: 1,
+              yPercent: 0,
+              scale: 1,
+              delay: index * 0.2,
+              ease: Power3.easeOut,
+              duration: 1,
+            },
+            0.4,
+          );
+          // chart_tl.to(
+          //   img,
+          //   {
+          //     scaleY: 1,
+          //     stagger: 0.2,
+          //     delay: index * 0.2,
+          //     ease: Power3.easeOut,
+          //     duration: 1,
+          //   },
+          //   0.4,
+          // );
+          chart_tl.to(
+            line,
+            {
+              opacity: 1,
+              yPercent: 0,
+              stagger: 0.2,
+              delay: index * 0.2,
+              ease: Power3.easeOut,
+              duration: 0.4,
+            },
+            0.8,
+          );
+          chart_tl.to(
+            title,
+            {
+              opacity: 1,
+              xPercent: 0,
+              stagger: 0.2,
+              delay: index * 0.2,
+              ease: Power4.easeOut,
+              duration: 1,
+            },
+            1,
+          );
+          chart_tl.to(
+            descr,
+            {
+              opacity: 1,
+              xPercent: 0,
+              stagger: 0.2,
+              delay: index * 0.2,
+              ease: Power4.easeOut,
+              duration: 1.2,
+            },
+            1,
+          );
+        });
+      },
+      once: true,
     });
   });
 }

@@ -27,8 +27,4 @@ export const slideView = ({ src, isThumbnail }) => {
   `;
 };
 
-export const slidesView = (slidesSrc, isThumbnail) => {
-  return slidesSrc.map(src => {
-    return slideView({ src, isThumbnail });
-  });
-};
+export const slidesView = (slidesSrc, isThumbnail) => slidesSrc.map(src => slideView({ src, isThumbnail }));

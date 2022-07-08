@@ -1,10 +1,10 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { locoScroll } from './customScroll';
 import { popupFactory } from './popupFactory';
 import { contactForm } from './contactForm';
 import { contactPopup } from './contactPopup';
 import { contactPopupMobile } from './contactPopupMobile';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 {
   const headerRef = document.querySelector('.header');
@@ -12,7 +12,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   const toggleBtnRef = document.getElementById('toggle-menu');
 
   gsap.registerPlugin(ScrollTrigger);
-  window.addEventListener('scroll', function(evt) {
+  window.addEventListener('scroll', (evt) => {
     scrollFunction();
   });
   function scrollFunction() {
@@ -56,7 +56,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   const activeBtnRef = document.querySelector('.call__phone');
   const hiddenNumRef = document.querySelector('.call__phone-hidden');
 
-  const toggleActive = e => {
+  const toggleActive = (e) => {
     e.preventDefault();
     activeBtnRef.classList.toggle('hide');
     hiddenNumRef.classList.toggle('on');
@@ -72,12 +72,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
     contactPopup.open();
   });
 
-  requestFormMobileRef.addEventListener('click', e => {
+  requestFormMobileRef.addEventListener('click', (e) => {
     e.preventDefault();
     contactPopupMobile.open();
   });
 
-  requestFormTabRef.addEventListener('click', e => {
+  requestFormTabRef.addEventListener('click', (e) => {
     e.preventDefault();
     contactPopupMobile.open();
   });

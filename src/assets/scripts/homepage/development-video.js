@@ -38,7 +38,7 @@ import { slidesView } from '../construction/slidesView';
   const constructionListRef = document.querySelector('.development-video-thumbnails');
   const constructionCloseBtnRef = document.querySelector('.gallery-slider__link-back');
 
-  const handleOpenConstructionPopup = async event => {
+  const handleOpenConstructionPopup = async (event) => {
     event.preventDefault();
     const { target } = event;
     const cardRef = target.closest('.development-video-month__card');
@@ -54,7 +54,7 @@ import { slidesView } from '../construction/slidesView';
     }
   };
 
-  constructionCloseBtnRef.addEventListener('click', e => {
+  constructionCloseBtnRef.addEventListener('click', (e) => {
     e.preventDefault();
     constructionPopup.close();
   });

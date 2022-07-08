@@ -8,7 +8,7 @@ import { yearListSelectView } from './yearListSelectView';
 import { slidesView } from './slidesView';
 import { monthDescriptionView } from './monthDescriptionView';
 
-(async function() {
+(async function () {
   let galleryData = [];
 
   try {
@@ -38,9 +38,7 @@ import { monthDescriptionView } from './monthDescriptionView';
       const itemsByYear = this.constructions.filter(item => item.year === this.currentYear);
 
       return this.currentMonth
-        ? itemsByYear.filter(slide => {
-            return slide.month === this.currentMonth;
-          })
+        ? itemsByYear.filter(slide => slide.month === this.currentMonth)
         : itemsByYear;
     },
 
@@ -92,12 +90,12 @@ import { monthDescriptionView } from './monthDescriptionView';
   let activeYearRef = null;
   let activeMonthRef = null;
 
-  const handleFilterByYear = event => {
+  const handleFilterByYear = (event) => {
     const { target } = event;
     const btnRef = target.closest('.construction-year__item');
     if (!btnRef) return;
 
-    const year = btnRef.dataset.year;
+    const { year } = btnRef.dataset;
     filters.setCurrentYear(year);
     btnRef.classList.add('active');
     if (activeYearRef) {
@@ -106,18 +104,18 @@ import { monthDescriptionView } from './monthDescriptionView';
     activeYearRef = btnRef;
   };
 
-  const handleMobileYearChange = event => {
+  const handleMobileYearChange = (event) => {
     const { target } = event;
     const { value } = target;
     filters.setCurrentYear(value);
   };
 
-  const handleFilterByMonth = event => {
+  const handleFilterByMonth = (event) => {
     const { target } = event;
     const btnRef = target.closest('.construction-month__item');
     if (!btnRef) return;
 
-    const month = btnRef.dataset.month;
+    const { month } = btnRef.dataset;
     filters.setCurrentMonth(month);
     btnRef.classList.add('active');
     if (activeMonthRef) {
@@ -126,13 +124,13 @@ import { monthDescriptionView } from './monthDescriptionView';
     activeMonthRef = btnRef;
   };
 
-  const handleMobileMonthChange = event => {
+  const handleMobileMonthChange = (event) => {
     const { target } = event;
     const { value } = target;
     filters.setCurrentMonth(value.toLowerCase());
   };
 
-  const handleOpenConstructionPopup = e => {
+  const handleOpenConstructionPopup = (e) => {
     e.preventDefault();
     const { target } = e;
     const cardRef = target.closest('.construction-month__card');
@@ -154,4 +152,4 @@ import { monthDescriptionView } from './monthDescriptionView';
 
   filters.renderMonth();
   filters.render();
-})();
+}());

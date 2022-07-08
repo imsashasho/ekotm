@@ -1,5 +1,4 @@
-export const monthButtonView = ({ name, description }) => {
-  return `
+export const monthButtonView = ({ name, description }) => `
         <div class="construction-month__item" data-month="${name.toLowerCase()}">
             <span>${name}</span>
             <div class="construction-month__left-hint">
@@ -10,7 +9,4 @@ export const monthButtonView = ({ name, description }) => {
             </div>
         </div>
       `;
-};
-export const monthListButtonsView = items => {
-  return items.map(item => monthButtonView(item)).join('');
-};
+export const monthListButtonsView = items => items.map(item => monthButtonView(item)).join('');

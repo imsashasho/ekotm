@@ -5,7 +5,7 @@ const progressItemsRef = Array.from(document.querySelectorAll('.progress-line__c
 const windowHeight = window.innerHeight;
 const offset = 100;
 
-const setActivProgressItem = relativeWidth => {
+const setActivProgressItem = (relativeWidth) => {
   const numberOffActiveItems = Math.floor(relativeWidth * progressItemsRef.length);
 
   progressItemsRef.forEach((element, index) => {
@@ -18,7 +18,7 @@ const setActivProgressItem = relativeWidth => {
   });
 };
 
-const changeProgress = width => {
+const changeProgress = (width) => {
   progressRef.style.width = width;
 };
 
@@ -32,8 +32,7 @@ const handleScroll = () => {
   }
 
   const diffAbs = Math.abs(diff);
-  const relativeWidth =
-    diffAbs < windowHeight - offset * 2 ? diffAbs / (windowHeight - offset * 2) : 1;
+  const relativeWidth = diffAbs < windowHeight - offset * 2 ? diffAbs / (windowHeight - offset * 2) : 1;
 
   changeProgress(`${relativeWidth * 100}%`);
   setActivProgressItem(relativeWidth);
