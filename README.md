@@ -17,3 +17,4 @@ php -S <path-to-local-host>
 ```
 
 Replace `<path-to-local-hos>` by localhost that is shown when you run projct locally i.e. `php -S http://localhost:3003`
+# ekotm
