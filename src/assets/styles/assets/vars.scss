@@ -1,8 +1,10 @@
-$default-font: 'gilroy', sans-serif;
+$default-font: 'Noto Sans', sans-serif;
 $default-font2: 'montser', sans-serif;
 
-$mc1: #283013;
-$mc2: #8cb90c;
+$mc1: #0C1E34;
+$mc2: #36383F;
+$green: #006B91;
+$grey: #CDCDCD;
 $textGrey: #676863;
 $textLight: #9a9f8c;
 $wc: #fff;
@@ -11,7 +13,6 @@ $bc2: #0e0e0e;
 $bTitle: #181818;
 $adCol: #cecece;
 $lightGrey: #e0e0e0;
-$grey: #363636;
 $grey2: #676863;
 $greyBg: #f0f0f0;
 
@@ -23,7 +24,7 @@ $dark: #1a2941;
 
 $xs: 767px;
 $sm: 1366px;
-$md: 1920px;
+$md: 1919px;
 
 @mixin media($size) {
   @media (max-width: $size) {
@@ -55,26 +56,30 @@ $md: 1920px;
 
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
-  --header-h: 80px;
+  --header-h-top: 170px;
+  --header-h: 100px;
   --logo-w: 160px;
   --sliceFigure: 239px;
   --sliceFigure-big: 541px;
 
   @include tabletLarge {
-    --header-h: 70px;
+    --header-h-top: 120px;
+    --header-h: 80px;
     --logo-w: 120px;
     --sliceFigure-big: 362px;
   }
 
   @include tablet {
-    --header-h: 90px;
+    --header-h-top: 100px;
+    --header-h: 80px;
     --logo-w: 90px;
     --sliceFigure-big: 44px;
 
   }
 
   @include mobile {
-    --header-h: 60px;
+    --header-h-top: 100px;
+    --header-h: 80px;
     --sliceFigure: 100px;
     --sliceFigure-big: 100px;
   }

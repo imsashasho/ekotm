@@ -1,262 +1,183 @@
-#id-page-documents .header {
-    background: rgba(24, 24, 24, 1);
-}
-
-#id-page-documents .header.bg-header{
-    background: rgba(24, 24, 24, 0.5);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
-
-#id-page-documents .header.on {
-    background-color: $bTitle;
-}
 .documents {
-    display: flex;
-    padding-top: var(--header-h);
-    justify-content: space-between;
-    height: 100vh;
+    padding-top: 210px;
+
+    @include tabletLarge {
+        padding-top: 150px;
+    }
+
     @include tablet {
-        flex-direction: column;
-    } 
-    
-    &-left {
-        background-image: url(../images/black-bg.png);
-        background-size: cover;
-        padding: 100px 22px 80px 110px;
-        width: 39%; 
+        padding-top: 40px;
+    }
+
+    @include mobile {
+        padding-top: 50px;
+    }
+
+    &-container {
+
+    }
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
         @include tabletLarge {
-            padding: 50px;
+            margin-bottom: 20px;
         }
+
         @include tablet {
-            width: 100%;
+            margin-bottom: 15px;
         }
-        @include mobile {
-            padding: 30px 20px;
-        }   
-        .btn-arrow svg {
-            fill: $wc;
-            stroke: $wc;
-        }
-        .btn-arrow::before {
-            background-color: $wc;
-            transition: width ease-in 0.1s;
-        }
-      
-        .btn-circle svg {
-            stroke: $wc;
-        }
+
     }
 
     &-title {
         font-family: $default-font;
         font-style: normal;
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 110%;
-        color: $wc;
-        margin-top: 20px;
+        font-weight: 400;
+        font-size: 72px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: $mc1;
+
         @include tabletLarge {
+            font-size: 54px;
+        }
+
+        @include tablet {
+            font-size: 44px;
+        }
+
+        @include mobile {
             font-size: 36px;
         }
-        @include tablet {
-            font-size: 48px;
-        }
-        @include mobile {
-            font-size: 24px;
-        } 
+
+
     }
 
-    &-intro {
-        margin-top: 50px;
-        width: 87%;
+    &-list {
+        display: flex;
+        justify-content: space-between;
 
-        & p {
-            font-family: $default-font;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 140%;
-            color: #C1C1C1;
-            margin-bottom: 20px;
-            
-            &:last-child {
+        @include tablet {
+           flex-direction: column;
+        }
+    }
+
+    &-card {
+        width: 32%;
+        border: 2px solid $grey;
+        border-radius: 20px;
+        padding: 50px;
+        text-decoration: none;
+        transition: all ease-in-out 0.3s;
+
+        @include tabletLarge {
+            padding: 30px;
+        }
+
+        @include tablet {
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+
+        &:last-child {
+            @include mobile {
                 margin-bottom: 0;
             }
         }
 
-    }
-
-    &-right {
-        background-color: $greyBg;
-        padding: 133px 110px;
-        width: 61%;
-        overflow-y: scroll;
-        @include tabletLarge {
-            width: 100%;
-            padding: 50px;
-        }
-        @include mobile {
-            padding: 30px 20px;
-        } 
-    }
-
-    &-item {
-        display: flex;
-        border-bottom: 1px solid #D2D2D2;
-        padding-bottom: 20px;
-        align-items: flex-end;
-        justify-content: space-between;
-        margin-top: 30px;
-        text-decoration: none;
-        transition: border-bottom ease-in-out 0.5s;
-
-        @include mobile {
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            margin-top: 20px;
-        } 
         &:hover {
-            border-bottom: 1px solid $mc2;    
-        }
-        &:first-child {
-            margin-top: 0; 
-
-        }
-        & iframe {
-            @include mobile {
-                position: absolute;
-                top: 0;
-
-            } 
+            box-shadow: rgba(100, 100, 111, 0.1) 0px 10px 10px 0px;
         }
     }
 
-    &-text {
+    &-card-text {
         display: flex;
-        margin-left: 30px;
-        flex-direction: column;
-        width: 70%;
-        @include mobile {
-            width: 60%;
-            margin-left: 86px;
-        } 
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+
+        @include tabletLarge {
+            margin-bottom: 20px;
+        }
+
+        @include tablet {
+            margin-bottom: 15px;
+        }
+
     }
 
-    &-text-title {
+    &-card__title {
+        font-family: $default-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 130%;
+        color: $mc1;
+        width: 70%;
+
+        @include tabletLarge {
+            font-size: 24px;
+        }
+
+        @include mobile {
+            font-size: 20px;
+            width: 100%;
+        }
+
+    }
+
+    &-card__svg {
+        width: 34px;
+        height: 34px;
+        border-bottom: 1px solid $mc;
+
+        @include tabletLarge {
+            height: 20px;
+            width: 20px;
+        }
+
+        @include mobile {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+        svg {
+            width: 34px;
+            height: 34px;
+            transform: rotate(270deg);
+
+            @include tabletLarge {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    &-size {
         font-family: $default-font;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 140%;
-        color: $bTitle;
-        margin-top: 17px;
-        width: 40%;
+        line-height: 150%;
+        color: #36383F;
+
         @include tabletLarge {
-            width: 60%;
+            font-size: 16px;
         }
+
         @include tablet {
-            width: 70%;
-            font-size: 15px;
-            margin-top: 15px;
-        }
-        @include mobile {
-            width: 100%;
-        } 
-
-    }
-
-    &-date {
-        font-size: 12px;
-        font-weight: 500;
-        color: #676863;
-        position: relative;
-        margin-left: 22px;
-        @include mobile {
-            font-size: 10px;
-        } 
-        &::before {
-            content: '';
-            background-image: url(../images/clock-grey.svg);
-            width: 12px;
-            height: 12px;
-            background-position: center;
-            background-size: contain;
-            position: absolute;
-            left: -22px;
-            bottom: 0;
-            transform: translateY(-50%);
-            @include mobile {
-                width: 10px;
-                height: 10px;
-            } 
-        }
-    }
-}
-
-.documents-btn {
-    margin-top: 50px;
-    @include tabletLarge {
-        margin-top: 40px;
-    }
-    @include tablet {
-        margin-top: 30px;
-    }
-    svg {
-        fill: $wc;
-    }
-}
-
-.documents-link {
-    color: $wc !important;
-}
-
-.download-btn {
-    margin-top: 50px;
-    @include tablet {
-        margin-top: 30px;
-    }
-    @include mobile {
-        margin-top: 15px;
-        margin-left: 86px;
-    } 
-
-    &:hover {
-        .btn-arrow {
-            transform: translate(50%, 0);
-        } 
-        
-        .btn-arrow svg {
-            transform: scale(1) !important;
-        }
-    }
-    .btn-arrow {
-        top: 22%;
-        right: 50%;
-        transform: translate(50%, -40%);
-        height: 20px;
-        &::before {
-            display: none;
-        }
-
-        svg {
-
-            height: 20px;
-            max-width: 10px;
-            transform: scale(1);
-            @include tabletLarge {
-                max-width: 7px;
-
-            }
+            font-size: 14px;
         }
 
     }
-    
 }
-
-.download-link {
-    color: $bc;
-}
-

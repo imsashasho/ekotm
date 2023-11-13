@@ -1,3 +1,13 @@
-@include font-face("gilroy", "../fonts/gilroyRegular/Gilroy-Regular", 400);
-@include font-face("gilroy", "../fonts/gilroyMedium/Gilroy-Medium", 500);
-@include font-face("gilroy", "../fonts/gilroySemiBold/Gilroy-SemiBold", 600);
+@font-face {
+    font-family: 'NotoSans-Regular';
+    src:url('../../fonts/NatoSans-Regular/NotoSans-Regular.woff') format('woff'),
+        url('../../fonts/NatoSans-Regular/NotoSans-Regular.woff2') format('woff2'),
+        url('../../fonts/NatoSans-Regular/NotoSans-Regular.svg#NotoSans-Regular') format('svg'),
+        url('../../fonts/NatoSans-Regular/NotoSans-Regular.eot'),
+        url('../../fonts/NatoSans-Regular/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/NatoSans-Regular/NotoSans-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

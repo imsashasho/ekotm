@@ -1,4 +1,4 @@
-const proxy = 'romankiv';
+const proxy = 'eco';
 let webPackSetting = true;
 let typeScriptSetting = false;
 
@@ -145,11 +145,22 @@ function scssTemplateCreater() {
 // следим за build и релоадим браузер
 function server() {
   browserSync.init({
-    //server: paths.root,
-    notify: false,
-    proxy,
+    server: {
+      baseDir: './',
+      routes: {},
+      middleware: function(req, res, next) {
+        if (/\.json|\.txt|\.html/.test(req.url) && req.method.toUpperCase() == 'POST') {
+          console.log('[POST => GET] : ' + req.url);
+          req.method = 'GET';
+        }
+        next();
+      },
+    },
+    // server: paths.root,
+    // notify: false,
+    // proxy,
   });
-  browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
+  browserSync.watch(`${paths.root}/**/*.*`, browserSync.reload);
 }
 
 // очистка

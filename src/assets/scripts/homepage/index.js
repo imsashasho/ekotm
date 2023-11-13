@@ -1,11 +1,3 @@
-import './answers';
-import './conditions';
-import './development-slider';
-import './development-video';
-import './location';
-import './news';
-import './questions';
-import './map/maps';
-import './calculator';
-import './animations';
-import './langs';
+import './accordion';
+import './animationBlobs';
+import './animation';

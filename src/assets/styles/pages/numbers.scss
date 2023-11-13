@@ -1,0 +1,243 @@
+.numbers {
+  padding-top: 210px;
+
+  @include tabletLarge {
+    padding-top: 150px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+  }
+
+  @include mobile {
+    padding-top: 50px;
+  }
+
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include tabletLarge {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+      flex-wrap: wrap;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(n + 2) > .numbers-card--colored__container {
+      @include mobile {
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &-card {
+    padding: 30px 50px;
+    border-radius: 20px;
+    border: 2px solid $grey;
+    height: 400px;
+    position: relative;
+
+    @include tabletLarge {
+      padding: 30px;
+      height: 350px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    @include mobile {
+      height: fit-content;
+    }
+  }
+
+  &-card--large {
+    width: 37.8%;
+
+    @include tablet {
+      width: 48.8%;
+      height: inherit;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &-card--large.numbers-card--colored {
+    width: 62.5%;
+
+    @include tablet {
+      height: 150px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    @include mobile {
+      width: 48.5%;
+      height: 156px;
+      margin-bottom: 0;
+    }
+  }
+
+  &-card--small {
+    width: 34.6%;
+
+    @include tablet {
+      height: 235px;
+      width: 100%;
+    }
+
+    @include mobile {
+      width: 48.5%;
+      height: 156px;
+    }
+  }
+
+  &-card--colored__container {
+    width: 60.4%;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      flex-direction: column;
+      width: 48.8%;
+    }
+
+    @include mobile {
+      width: 100%;
+      flex-direction: row;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-card--colored {
+    background: linear-gradient(294deg, #D0EFAD -16.35%, #CEEEFA 102.51%);
+    border: none;
+
+    @include mobile {
+      width: 49%;
+      height: 156px;
+    }
+  }
+
+  // &-card--large-text {
+
+  //     @include mobile {
+  //         margin-top: 5px;
+  //     }
+
+  // }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 70%;
+    background-color: #86c8bc;
+    text-decoration: none;
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 30px;
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+      background-color: $wc;
+      border: 1px solid #86c8bc;
+    }
+
+    @include tabletLarge {
+      height: 56px;
+      width: 210px;
+    }
+
+    @include tablet {
+      height: 45px;
+      width: 170px;
+      font-size: 16px;
+      border-radius: 15px;
+    }
+
+    @include mobile {
+      margin-top: 15px;
+    }
+  }
+
+  &-img {
+    position: absolute;
+    width: 115px;
+    height: 120px;
+    bottom: 0;
+    right: 50px;
+
+    @include tabletLarge {
+      width: 84px;
+      height: 90px;
+      right: 30px;
+    }
+
+    @include tablet {
+      width: 65px;
+      height: 70px;
+      right: 20px;
+    }
+  }
+
+  &-card__title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $mc1;
+    margin-bottom: 30px;
+
+    @include tabletLarge {
+      font-size: 54px;
+      margin-bottom: 20px;
+    }
+
+    @include tablet {
+      font-size: 44px;
+      margin-bottom: 15px;
+    }
+
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+
+  &-card__descr {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $mc2;
+
+    @include tabletLarge {
+      font-size: 16px;
+    }
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+}
