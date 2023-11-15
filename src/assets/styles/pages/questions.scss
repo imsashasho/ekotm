@@ -1,29 +1,9 @@
 .questions {
-    padding-top: 210px;
-    padding-bottom: 295px;
+    padding-top: 50px;
+
     position: relative;
 
-    @include tabletLarge {
-        padding-top: 150px;
-        padding-bottom: 210px;
-    }
-
-    @include tablet {
-        padding-top: 40px;
-        padding-bottom: 80px;
-    }
-
-    @include mobile {
-        padding-top: 50px;
-        padding-bottom: 90px;
-    }
-
-    &-circles {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-
+   
     &-container {
 
     }

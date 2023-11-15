@@ -1,3 +1,3 @@
 import './accordion';
-import './animationBlobs';
+// import './animationBlobs';
 import './animation';

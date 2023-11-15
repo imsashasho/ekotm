@@ -1,18 +1,16 @@
 .container {
-  padding: 0 100px;
+  padding: 0 20px;
   margin: 0 auto;
 
   @include tabletLarge {
-    padding: 0 70px;
+    padding: 0 20px;
   }
 
   @include tablet {
-    padding: 0 40px;
+    padding: 0 10px;
   }
 
-  @include mobile {
-    padding: 0 15px;
-  }
+ 
 }
 
 button {

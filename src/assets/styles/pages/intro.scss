@@ -8,40 +8,40 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        // background-image: linear-gradient(294deg, #03c837 -16.35%, #f96008 102.51%);
+        padding-top: var(--header-h-top);
+
         
 
-        canvas {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }
     }
 
-    &-inner__text-wrap {
-        filter: blur(4px);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-size: cover;
-
-        background-image: url('https://img.freepik.com/free-photo/assortment-frozen-food-table_23-2148969440.jpg?w=1480&t=st=1699837104~exp=1699837704~hmac=02947ffdc1ee1a2630260cc481152d5e6ef0802738d411a96cd6e3c6dfeaef43');
+    &-inner__img-wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+      
 
     }
 
     &-inner__text {
+        position: absolute;
+        bottom: 20px;
+        left: 40px;
+        right: 40px;
         height: fit-content;
-        width: fit-content;
-        align-self: center;
+        max-width: 100%;
         border-radius: 20px;
-        background: transparent;
-       
+        background: $mc1;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        position: relative;
+        padding: 50px;
 
     }
 
@@ -143,6 +143,19 @@
         text-align: left;
         text-transform: uppercase;
         color: #fff;
+        position: relative;
+        padding-bottom: 20px;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba($color: #fff, $alpha: 0.5);
+        }
 
         @include tabletLarge {
             font-size: 72px;
@@ -150,6 +163,7 @@
 
         @include tablet {
             font-size: 60px;
+            padding-bottom: 10px;
         }
         
         @include mobile {
@@ -159,27 +173,23 @@
     }
 
     &-inner__text-description {
-        width: 40%;
-        margin-top: 50px;
+        width: 60%;
+        padding-top: 20px;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
-        padding: 20px;
         line-height: 150%;
         text-align: center;
-        color: #000;
+        color: #fff;
         text-align: left;
-        background: #fff;
-        border-radius: 20px;
 
         @include tabletLarge {
             font-size: 20px;
-            margin-top: 30px;
         }
 
         @include tablet {
             font-size: 18px;
-            margin-top: 20px;
+            padding-top: 10px;
             width: 60%;
         }
         
@@ -187,7 +197,6 @@
         @include mobile {
             width: 100%;
             font-size: 14px;  
-            margin-top: 15px; 
         }
 
     }

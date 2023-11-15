@@ -49,7 +49,7 @@
     &-card--small {
         position: relative;
         width: 39%;
-        border: 2px solid #CDCDCD;
+        background: $mc1;
         padding: 50px;
         border-radius: 20px;
         height: 100%;
@@ -97,22 +97,18 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        height: 1000px;
-        margin-bottom: 210px;
+        height: 800px;
 
         @include tabletLarge {
-            height: 710px;
-            margin-bottom: 150px;
+            height: 600px;
         }
 
         @include tablet {
             height: 535px;
-            margin-bottom: 40px;
         }
 
         @include mobile { 
             flex-direction: column;
-            margin-bottom: 50px;
             height: auto;
         }
 
@@ -193,7 +189,7 @@
         font-size: 72px;
         line-height: 120%;
         text-transform: uppercase;
-        color: $mc1;
+        color: #fff;
         margin-bottom: 30px;
 
         @include tabletLarge {
@@ -219,7 +215,7 @@
         font-weight: 400;
         font-size: 32px;
         line-height: 130%;
-        color: $mc1;
+        color: #fff;
         margin-bottom: 30px;
 
         @include tabletLarge {
@@ -240,7 +236,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 150%;
-        color: $mc2;
+        color: rgba($color: #fff, $alpha: 0.5);
         margin-bottom: 30px;
 
         @include tabletLarge {
@@ -297,35 +293,26 @@
 
     &-img-team {
         position: absolute;
-        width: 130px;
+        width: 400px;
         bottom: 0;
-        left: 50px;
-
-        @include tabletLarge {
-            left: 30px;
-        }
+        left: 0;
 
         @include tablet { 
-            width: 80px;
-            left: 20px;
+            width: 200px;
+            
         }
 
     }
 
     &-img-goals {
         position: absolute;
-        width: 295px;
+        width: 450px;
         bottom: 0;
-        right: 50px;
+        right: 0;
 
-        @include tabletLarge {
-            width: 207px;
-            right: 30px;
-        }
 
         @include tablet { 
-            width: 152px;
-            right: 20px;
+            width: 225px;
         }
 
     }

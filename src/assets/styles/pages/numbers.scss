@@ -1,54 +1,26 @@
 .numbers {
-  padding-top: 210px;
 
-  @include tabletLarge {
-    padding-top: 150px;
-  }
-
-  @include tablet {
-    padding-top: 40px;
-  }
-
-  @include mobile {
-    padding-top: 50px;
-  }
+  margin-top: 50px;
 
   &-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
-
-    @include tabletLarge {
-      margin-bottom: 20px;
-    }
-
-    @include mobile {
-      margin-bottom: 0;
-      flex-wrap: wrap;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &:nth-child(n + 2) > .numbers-card--colored__container {
-      @include mobile {
-        margin-top: 0;
-        margin-bottom: 15px;
-      }
-    }
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   &-card {
+    width: calc(33.3% - 6.6px);
     padding: 30px 50px;
     border-radius: 20px;
     border: 2px solid $grey;
     height: 400px;
     position: relative;
-
+    overflow: hidden;
     @include tabletLarge {
       padding: 30px;
       height: 350px;
+      width: calc(50% - 5px);
     }
 
     @include tablet {
@@ -56,77 +28,23 @@
     }
 
     @include mobile {
+      width: 100%;
       height: fit-content;
     }
   }
 
-  &-card--large {
-    width: 37.8%;
-
-    @include tablet {
-      width: 48.8%;
-      height: inherit;
-    }
-
-    @include mobile {
-      width: 100%;
-    }
-  }
-
-  &-card--large.numbers-card--colored {
-    width: 62.5%;
-
-    @include tablet {
-      height: 150px;
-      margin-bottom: 15px;
-      width: 100%;
-    }
-
-    @include mobile {
-      width: 48.5%;
-      height: 156px;
-      margin-bottom: 0;
-    }
-  }
-
-  &-card--small {
-    width: 34.6%;
-
-    @include tablet {
-      height: 235px;
-      width: 100%;
-    }
-
-    @include mobile {
-      width: 48.5%;
-      height: 156px;
-    }
-  }
-
-  &-card--colored__container {
-    width: 60.4%;
-    display: flex;
-    justify-content: space-between;
-    @include tablet {
-      flex-direction: column;
-      width: 48.8%;
-    }
-
-    @include mobile {
-      width: 100%;
-      flex-direction: row;
-      margin-top: 15px;
-      margin-bottom: 10px;
-    }
-  }
+  
 
   &-card--colored {
-    background: linear-gradient(294deg, #D0EFAD -16.35%, #CEEEFA 102.51%);
+    background: $mc1;
     border: none;
 
-    @include mobile {
-      width: 49%;
-      height: 156px;
+    .numbers-card__title {
+      color: #fff;
+    }
+
+    .numbers-card__descr {
+      color: #fff;
     }
   }
 
@@ -144,7 +62,7 @@
     align-items: center;
     height: 64px;
     width: 70%;
-    background-color: #86c8bc;
+    background-color: $mc1;
     text-decoration: none;
     font-family: $default-font;
     font-style: normal;
@@ -239,5 +157,29 @@
     @include tablet {
       font-size: 14px;
     }
+  }
+
+  &-img--first {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+  }
+
+  &-img--middle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  &-img--last {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
   }
 }
