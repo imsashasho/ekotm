@@ -1,5 +1,4 @@
 .numbers {
-
   margin-top: 50px;
 
   &-row {
@@ -32,8 +31,6 @@
       height: fit-content;
     }
   }
-
-  
 
   &-card--colored {
     background: $mc1;
@@ -94,6 +91,7 @@
 
     @include mobile {
       margin-top: 15px;
+      font-size: 14px;
     }
   }
 

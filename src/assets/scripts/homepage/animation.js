@@ -93,62 +93,12 @@ function clipPathEntry(selector, scroller, effectConfig = {}, gsap, cb = () => {
 }
 
 clipPathEntry('.about-card--large', document.body, {}, gsap);
-
-gsap.set('.general-card--small', {
-  yPercent: 10,
-  opacity: 0,
-});
-
-gsap.set('.general-card--large', {
-  yPercent: 10,
-  opacity: 0,
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  ScrollTrigger.batch('.general-card-container', {
-    start: 'top 90%',
-    end: 'bottom 5%',
-    onEnter: batch => {
-      batch.forEach((card, index) => {
-        const generalCard1 = card.querySelectorAll('.general-card--small');
-        const generalCard2 = card.querySelectorAll('.general-card--large');
-        const chart_tl = gsap.timeline();
-        chart_tl.to(
-          generalCard1,
-          {
-            opacity: 1,
-            yPercent: 0,
-            stagger: 0.2,
-            delay: index * 0.3,
-            ease: Power3.easeOut,
-            duration: 0.8,
-          },
-          0.1,
-        );
-        chart_tl.to(
-          generalCard2,
-          {
-            opacity: 1,
-            yPercent: 0,
-            stagger: 0.2,
-            delay: index * 0.3,
-            ease: Power3.easeOut,
-            duration: 0.8,
-          },
-          0.1,
-        );
-      });
-    },
-    once: true,
-  });
-});
-
-gsap.set('.numbers-card--large', {
+gsap.set('.numbers-card:nth-child(odd)', {
   opacity: 0,
   yPercent: 20,
   scale: 0.9,
 });
-gsap.set('.numbers-card--colored__container', {
+gsap.set('.numbers-card:nth-child(even)', {
   yPercent: -100,
   opacity: 0,
 });
@@ -160,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     onEnter: batch => {
       batch.forEach((card, index) => {
         // const img = card.querySelectorAll('.conditions-card-img');
-        const container1 = card.querySelectorAll('.numbers-card--large');
-        const container2 = card.querySelectorAll('.numbers-card--colored__container');
+        const container1 = card.querySelectorAll('.numbers-card:nth-child(odd)');
+        const container2 = card.querySelectorAll('.numbers-card:nth-child(even)');
         const chart_tl = gsap.timeline();
         chart_tl.to(
           container1,

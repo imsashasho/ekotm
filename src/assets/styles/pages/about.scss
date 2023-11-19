@@ -1,359 +1,340 @@
 .about {
-    padding-top: 210px;
+  padding-top: 100px;
+
+  @include tabletLarge {
+    padding-top: 50px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+  }
+
+  &-container {
+  }
+
+  &-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 1000px;
+    margin-bottom: 30px;
 
     @include tabletLarge {
-        padding-top: 150px;
+      height: 710px;
+      margin-bottom: 20px;
     }
 
     @include tablet {
-        padding-top: 40px;
+      height: 535px;
+      margin-bottom: 15px;
     }
-    
 
     @include mobile {
-        padding-top: 160px;
+      flex-direction: column;
+      margin-bottom: 15px;
+      height: fit-content;
+    }
+  }
+
+  &-card {
+  }
+
+  &-card--small {
+    position: relative;
+    width: 39%;
+    background: $mc1;
+    padding: 50px;
+    border-radius: 20px;
+    height: 100%;
+
+    @include tabletLarge {
+      padding: 30px;
     }
 
-    &-container {
-
+    @include tablet {
+      padding: 20px;
+      width: 48.48%;
     }
 
-    &-team {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        height: 1000px;
-        margin-bottom: 30px;
+    @include mobile {
+      width: 100%;
+      margin-bottom: 15px;
+      padding-bottom: 90px;
+    }
+  }
 
-        @include tabletLarge {
-            height: 710px;
-            margin-bottom: 20px;
-        }
+  &-card--large {
+    width: 60%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
 
-        @include tablet {
-            height: 535px;
-            margin-bottom: 15px;
-        }
-
-        @include mobile { 
-            flex-direction: column;
-            margin-bottom: 15px;
-            height: fit-content;
-        }
+    @include tablet {
+      width: 48.83%;
     }
 
-    &-card {
-
+    @include mobile {
+      width: 100%;
+      margin-bottom: 15px;
     }
 
-    &-card--small {
-        position: relative;
-        width: 39%;
-        background: $mc1;
-        padding: 50px;
-        border-radius: 20px;
-        height: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 
-        @include tabletLarge {
-            padding: 30px;
-        }
+  &-goals {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 800px;
 
-        @include tablet {
-            padding: 20px;
-            width: 48.48%;
-        }
-
-        @include mobile { 
-            width: 100%;
-            margin-bottom: 15px;
-            padding-bottom: 90px;
-        }
+    @include tabletLarge {
+      height: 600px;
     }
 
-    &-card--large {
-        width: 60%;
-        height: 100%;
-        border: 2px solid transparent;
-        border-radius: 20px;
-        overflow: hidden;
-
-        @include  tablet {
-            width: 48.83%;
-        }
-
-        @include mobile { 
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        img {
-            height: 100%;
-            object-fit: cover;
-        }
-
+    @include tablet {
+      height: 535px;
     }
 
-    &-goals {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        height: 800px;
-
-        @include tabletLarge {
-            height: 600px;
-        }
-
-        @include tablet {
-            height: 535px;
-        }
-
-        @include mobile { 
-            flex-direction: column;
-            height: auto;
-        }
-
-        > .about-card--small{
-            @include mobile {
-                order: 1;
-
-            }
-        }
-
-        > .about-card--large {
-            @include mobile {
-                order: 2;
-            }
-
-        }
+    @include mobile {
+      flex-direction: column;
+      height: auto;
     }
 
-    &-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 150px 97px;
-        border: 2px solid $grey;  
-        border-radius: 20px;
-
-            @include tabletLarge {
-                padding: 100px 30px;
-            }
-
-            @include tablet {
-                padding: 50px 20px;
-            }
-
-            @include mobile { 
-                flex-direction: column;
-                padding: 20px 10px;
-            }
-
-            img {
-                max-width: 330px;
-
-                @include tabletLarge { 
-                    max-width: 225px;
-                }
-
-                @include tablet { 
-                    max-width: 120px;
-                }
-
-                @include mobile { 
-                    max-width: 80px;
-                }
-            }
+    > .about-card--small {
+      @include mobile {
+        order: 1;
+      }
     }
 
-    &-info__card {
-        max-width: 500px;
+    > .about-card--large {
+      @include mobile {
+        order: 2;
+      }
+    }
+  }
 
-        @include mobile { 
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 97px;
+    border: 2px solid $grey;
+    border-radius: 20px;
 
-        p {
-            text-align: center;
-        }
-
+    @include tabletLarge {
+      padding: 50px 30px;
     }
 
+    @include tablet {
+      padding: 50px 20px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      padding: 20px 10px;
+    }
+
+    img {
+      max-width: 330px;
+
+      @include tabletLarge {
+        max-width: 225px;
+      }
+
+      @include tablet {
+        max-width: 120px;
+      }
+
+      @include mobile {
+        max-width: 80px;
+      }
+    }
+  }
+
+  &-info__card {
+    max-width: 500px;
+
+    @include mobile {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
 }
 
 .card {
-    &-title {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 72px;
-        line-height: 120%;
-        text-transform: uppercase;
-        color: #fff;
-        margin-bottom: 30px;
+  &-title {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 30px;
 
-        @include tabletLarge {
-            font-size: 54px;
-            margin-bottom: 20px;
-        }
-
-        @include tablet {
-            font-size: 44px;
-            margin-bottom: 15px;
-        }
-        
-
-        @include mobile { 
-            font-size: 36px;
-        }
-
+    @include tabletLarge {
+      font-size: 54px;
+      margin-bottom: 20px;
     }
 
-    &-descr--large {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 130%;
-        color: #fff;
-        margin-bottom: 30px;
-
-        @include tabletLarge {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        @include tablet {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        
+    @include tablet {
+      font-size: 44px;
+      margin-bottom: 15px;
     }
 
-    &-descr--small {
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 150%;
-        color: rgba($color: #fff, $alpha: 0.5);
-        margin-bottom: 30px;
+    @include mobile {
+      font-size: 36px;
+    }
+  }
 
-        @include tabletLarge {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+  &-descr--large {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 130%;
+    color: #fff;
+    margin-bottom: 30px;
 
-        @include tablet {
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
+    @include tabletLarge {
+      font-size: 24px;
+      margin-bottom: 20px;
     }
 
-    &-icon {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $green;
-        border-radius: 50%;
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
 
-        @include tabletLarge {
-            width: 40px;
-            height: 40px;
-        }
+  &-descr--small {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: rgba($color: #fff, $alpha: 0.5);
+    margin-bottom: 30px;
 
-        @include tablet { 
-            width: 30px;
-            height: 30px;
-        }
-
-            svg {
-                height: 24px;
-                width: 24px; 
-
-                @include tabletLarge {
-                    height: 19.2px;
-                    width: 19.2px;
-                }
-
-                @include tablet { 
-                    height: 14.4px;
-                    width: 14.4px;
-                }          
-            }
+    @include tabletLarge {
+      font-size: 16px;
+      margin-bottom: 20px;
     }
 
-    // &-img {
-    //     object-fit: cover;
+    @include tablet {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
 
-    // }
+  &-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $green;
+    border-radius: 50%;
 
-    &-img-team {
-        position: absolute;
-        width: 400px;
-        bottom: 0;
-        left: 0;
-
-        @include tablet { 
-            width: 200px;
-            
-        }
-
+    @include tabletLarge {
+      width: 40px;
+      height: 40px;
     }
 
-    &-img-goals {
-        position: absolute;
-        width: 450px;
-        bottom: 0;
-        right: 0;
-
-
-        @include tablet { 
-            width: 225px;
-        }
-
+    @include tablet {
+      width: 30px;
+      height: 30px;
     }
 
-    &-list {
-        padding: 0;
-        margin: 0;
+    svg {
+      height: 24px;
+      width: 24px;
 
+      @include tabletLarge {
+        height: 19.2px;
+        width: 19.2px;
+      }
+
+      @include tablet {
+        height: 14.4px;
+        width: 14.4px;
+      }
+    }
+  }
+
+  // &-img {
+  //     object-fit: cover;
+
+  // }
+
+  &-img-team {
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+
+    @include tablet {
+      width: 200px;
+    }
+  }
+
+  &-img-goals {
+    position: absolute;
+    width: 450px;
+    bottom: 0;
+    right: 0;
+
+    @include tablet {
+      width: 225px;
+    }
+  }
+
+  &-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  &-list__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 10px;
     }
 
-    &-list__item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-        @include tablet { 
-            margin-bottom: 10px;
-        }
+  &-list-descr--small {
+    width: 87%;
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $mc2;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-
+    @include tabletLarge {
+      font-size: 16px;
     }
 
-   &-list-descr--small {
-        width: 87%;
-        font-family: $default-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 150%;
-        color: $mc2;
-
-        @include tabletLarge {
-            font-size: 16px;
-        }
-
-        @include tablet { 
-            font-size: 14px;
-        }
-
+    @include tablet {
+      font-size: 14px;
     }
+  }
 }
